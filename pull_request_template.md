@@ -27,6 +27,7 @@
 - [ ]  I reviewed my code before pushing
 - [ ]  I ran the app to make sure its working with my changes
 - [ ]  I formatted with prettier 
+- [ ]  Does this PR close an issue? If so add it to this pr (#<ticketnumber>)
 
 **What's next?**
 
