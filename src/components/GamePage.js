@@ -7,11 +7,19 @@ function GamePage() {
   const word = useSelector((state) => state.word.value);
   const dispatch = useDispatch();
 
-  const [letter1, setLetter1] = useState("");
-  const [letter2, setLetter2] = useState("");
-  const [letter3, setLetter3] = useState("");
-  const [letter4, setLetter4] = useState("");
-  const [letter5, setLetter5] = useState("");
+  const [guess, setGuess] = useState("");
+  // const [fullWord, setFullWord] = useState("");
+  const [l1, setLetter1] = useState("");
+  const [l2, setLetter2] = useState("");
+  const [l3, setLetter3] = useState("");
+  const [l4, setLetter4] = useState("");
+  const [l5, setLetter5] = useState("");
+
+  function combineLetters(a, b, c, d, e) {
+    var letters = [a, b, c, d, e];
+    var newWord = letters.join("");
+    return newWord;
+  }
 
   return (
     <div className="game-page-container">
@@ -19,14 +27,33 @@ function GamePage() {
       <button>Click For Sound</button>
       <div className="boxes-container">
         <h2>Word: {word.word}</h2>
-        <input maxLength={1} />
-        <input maxLength={1} />
-        <input maxLength={1} />
-        <input maxLength={1} />
-        <input maxLength={1} />
+        {/* <input type="text" onChange={(event) => setGuess(event.target.value)} /> */}
+        <input
+          maxLength={1}
+          onChange={(event) => setLetter1(event.target.value)}
+        />
+        <input
+          maxLength={1}
+          onChange={(event) => setLetter2(event.target.value)}
+        />
+        <input
+          maxLength={1}
+          onChange={(event) => setLetter3(event.target.value)}
+        />
+        <input
+          maxLength={1}
+          onChange={(event) => setLetter4(event.target.value)}
+        />
+        <input
+          maxLength={1}
+          onChange={(event) => setLetter5(event.target.value)}
+        />
         <button
           className="submit-word-btn"
-          onClick={() => dispatch(update(  ))}
+          onClick={() => {
+            const guessedWord = combineLetters(l1, l2, l3, l4, l5);
+            dispatch(update(guessedWord));
+          }}
         >
           Submit
         </button>

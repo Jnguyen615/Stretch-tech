@@ -12,6 +12,8 @@ import App from "./App";
 const store = configureStore({
   reducer: {
     word: wordReducer,
+    // status - if the game is being played or not -- maybe this is a route
+    // counter - 
   },
 });
 
