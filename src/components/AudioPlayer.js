@@ -6,6 +6,7 @@ const AudioPlayer = () => {
   const word = useSelector((state) => state.word.value);
   const audioRef = useRef(null);
 
+  // Use effect is needed to 'reload' the audio element after the state of word changes
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.load(); // Reset the audio element
