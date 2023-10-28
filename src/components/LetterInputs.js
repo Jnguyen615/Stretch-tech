@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { update } from "../reducers/word";
+import word, { update } from "../reducers/word";
 import { increment } from "../reducers/Increment";
 import { useSelector } from "react-redux";
 
 function LetterInputs({ wordLength }) {
+  const word = useSelector((state) => state.word.value);
   // Initializing an array to track the input states for each letter
   // The 'Array(wordLength).fill("")' expression creates an array of 'wordLength' elements, and fills it with empty strings, representing the initial state of each input field. Saw this in a tutorial.
 
@@ -54,6 +55,7 @@ function LetterInputs({ wordLength }) {
           dispatch(update(guessedWord));
           clearInputFields();
           dispatch(increment());
+          console.log(word);
         }}
       >
         Submit
