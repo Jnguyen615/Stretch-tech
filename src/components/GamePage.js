@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { update } from "../reducers/word";
 import LetterInputs from "./LetterInputs";
+import AudioPlayer from "./AudioPlayer";
 
 function GamePage() {
   const word = useSelector((state) => state.word.value);
@@ -26,11 +27,10 @@ function GamePage() {
   return (
     <div className="game-page-container">
       <h1>Game</h1>
-      <button>Click For Sound</button>
       <div className="boxes-container">
+        <AudioPlayer />
         <h2>Word: {word.word}</h2>
         {console.log(word.word.length)}
-
         <LetterInputs wordLength={wordLength} />
         {/* <input
           maxLength={1}
