@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { update } from "../reducers/word";
-import { increment } from "../reducers/Increment";
+import { update } from "../../reducers/word";
+import { increment } from "../../reducers/Increment";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom"
+import './LetterInputs.css'
 
 function LetterInputs({ wordLength }) {
   // Initializing an array to track the input states for each letter
@@ -31,7 +33,7 @@ function LetterInputs({ wordLength }) {
   // Getting access to Redux dispatch to send actions and the counter value from the store
   const dispatch = useDispatch();
   const counterValue = useSelector((state) => state.increment.value);
-
+ 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
@@ -46,6 +48,24 @@ function LetterInputs({ wordLength }) {
           />
         ))}
       </div>
+      {counterValue === 10 ? (
+
+      <Link to='/results'>
+         <button
+        className="submit-word-btn"
+        onClick={() => {
+          const guessedWord = letterStates.join("");
+          console.log(guessedWord);
+          dispatch(update(guessedWord));
+          clearInputFields();
+          dispatch(increment());
+        }}
+      >
+        Submit
+      </button>
+      </Link>
+      ): (
+
       <button
         className="submit-word-btn"
         onClick={() => {
@@ -58,6 +78,7 @@ function LetterInputs({ wordLength }) {
       >
         Submit
       </button>
+      )}
       <div className="counter">Counter: {counterValue}</div>
     </>
   );
