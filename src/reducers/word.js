@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import the api data file 
+// import the api data file
 
-const words = [{ word: "hello" }, { word: "good job" }];
-// this will go away 
+const words = [{ word: "hello" }, { word: "goodbye" }];
+// this will go away
 const initialStateValue = words[0];
 
 export const wordSlice = createSlice({
   name: "word",
-  // this is state name - so maybe wordBank is a better name 
+  // this is state name - so maybe wordBank is a better name
   initialState: { value: initialStateValue },
   reducers: {
     update: (state, action) => {

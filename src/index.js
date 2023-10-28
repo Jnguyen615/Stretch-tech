@@ -6,14 +6,14 @@ import ReactDOM from "react-dom/client";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import wordReducer from "./reducers/word";
+import incrementReducer from "./reducers/Increment";
 
 import App from "./App";
 
 const store = configureStore({
   reducer: {
     word: wordReducer,
-    // status - if the game is being played or not -- maybe this is a route
-    // counter - 
+    increment: incrementReducer,
   },
 });
 
