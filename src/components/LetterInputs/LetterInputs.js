@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import word, { update } from "../reducers/word";
-import { increment } from "../reducers/Increment";
+import { update } from "../../reducers/word";
+import { increment } from "../../reducers/Increment";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom"
+import './LetterInputs.css'
 
 function LetterInputs({ wordLength }) {
-  const word = useSelector((state) => state.word.value);
   // Initializing an array to track the input states for each letter
   // The 'Array(wordLength).fill("")' expression creates an array of 'wordLength' elements, and fills it with empty strings, representing the initial state of each input field. Saw this in a tutorial.
 
@@ -32,7 +33,7 @@ function LetterInputs({ wordLength }) {
   // Getting access to Redux dispatch to send actions and the counter value from the store
   const dispatch = useDispatch();
   const counterValue = useSelector((state) => state.increment.value);
-
+ 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
@@ -47,6 +48,24 @@ function LetterInputs({ wordLength }) {
           />
         ))}
       </div>
+      {counterValue === 10 ? (
+
+      <Link to='/results'>
+         <button
+        className="submit-word-btn"
+        onClick={() => {
+          const guessedWord = letterStates.join("");
+          console.log(guessedWord);
+          dispatch(update(guessedWord));
+          clearInputFields();
+          dispatch(increment());
+        }}
+      >
+        Submit
+      </button>
+      </Link>
+      ): (
+
       <button
         className="submit-word-btn"
         onClick={() => {
@@ -55,11 +74,11 @@ function LetterInputs({ wordLength }) {
           dispatch(update(guessedWord));
           clearInputFields();
           dispatch(increment());
-          console.log(word);
         }}
       >
         Submit
       </button>
+      )}
       <div className="counter">Counter: {counterValue}</div>
     </>
   );

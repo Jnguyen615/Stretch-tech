@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { update } from "../reducers/word";
-import LetterInputs from "./LetterInputs";
-import AudioPlayer from "./AudioPlayer";
+import { update } from "../../reducers/word";
+import LetterInputs from "../LetterInputs/LetterInputs";
+import AudioPlayer from "../AudioPlayer/AudioPlayer";
 
 function GamePage() {
   const word = useSelector((state) => state.word.value);
