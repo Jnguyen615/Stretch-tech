@@ -21,13 +21,8 @@ export const wordSlice = createSlice({
   initialState: { value: initialStateValue },
   reducers: {
     update: (state, action) => {
-      const guessedWord = action.payload;
-      console.log(guessedWord);
-
-      const isCorrectWord = state.value.word === guessedWord;
-      console.log(isCorrectWord);
-      console.log(state.value.word);
-      if (isCorrectWord) {
+      const guessedWordStatus = action.payload;
+      if (guessedWordStatus) {
         const currentIndex = words.findIndex(
           (wordObj) => wordObj.word === state.value.word
         );
