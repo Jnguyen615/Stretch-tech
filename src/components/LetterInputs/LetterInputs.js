@@ -77,6 +77,7 @@ function LetterInputs() {
         ))}
       </div>
       {counterValue === 10 ? (
+        // ==== UPDATE =====
         // I think that this actually won't be a 'button' with a link - we'll need to just immediately route to the results page IF the counter value increments to 10
         // Not sure what that will mean for code but I think below code will change
         <Link to="/results">
@@ -93,6 +94,7 @@ function LetterInputs() {
           </button>
         </Link>
       ) : (
+        // ===== UPDATE END =====
         <button
           className="submit-word-btn"
           onClick={() => {
