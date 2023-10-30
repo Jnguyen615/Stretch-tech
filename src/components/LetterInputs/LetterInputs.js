@@ -3,17 +3,19 @@ import { useDispatch } from "react-redux";
 import { update } from "../../reducers/word";
 import { increment } from "../../reducers/Increment";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./LetterInputs.css";
 
 function LetterInputs() {
   const dispatch = useDispatch();
+  // included this piece of state for stying purposes. See the input for the styling conditional.
+  const [submitted, setSubmitted] = useState(false);
 
   // GSM
   const word = useSelector((state) => state.word.value);
   const counterValue = useSelector((state) => state.increment.value);
-
+  const navigate = useNavigate();
   const wordLength = word.word.length;
   const wordAsArray = word.word.split("");
 
@@ -24,6 +26,8 @@ function LetterInputs() {
   useEffect(() => {
     // Every time the word changes, update the letter state to a new empty letter objects each with their own status of true = "right" or false = "not right"
     setLetterStates(Array(wordLength).fill({ letter: "", status: false }));
+    // for styling purposes, to change the syling back to original state - no styling
+    setSubmitted(false);
   }, [word]);
 
   const updateLetterState = (index, value) => {
@@ -36,14 +40,14 @@ function LetterInputs() {
     const updatedStates = [...letterStates];
 
     updatedStates[index] = { letter: value, status: false };
-    const changeLetterStatus = isLetterCorrect(
-      wordAsArray,
-      index,
-      updatedStates
-    );
-    if (changeLetterStatus) {
-      updatedStates[index] = { letter: value, status: true };
-    }
+    // const changeLetterStatus = isLetterCorrect(
+    //   wordAsArray,
+    //   index,
+    //   updatedStates
+    // );
+    // if (changeLetterStatus) {
+    //   updatedStates[index] = { letter: value, status: true };
+    // }
     setLetterStates(updatedStates);
   };
 
@@ -62,6 +66,30 @@ function LetterInputs() {
     return fullWord === word.word;
   };
 
+  function handleSubmission() {
+    const isCorrect = isWordCorrect(letterStates);
+
+    if (isCorrect) {
+      // If all the letters are correct, send true to update reducer -> go to the next word
+      dispatch(update(true));
+      dispatch(increment());
+      setSubmitted(false);
+
+      if (counterValue === 9) {
+        // 9 because if the user already has 9 points, and the user clicks submit, and they are correct, they will be navigated to the results page.
+        navigate("/results");
+      }
+    } else {
+      // If the word is incorrect, update styling and don't proceed to the next word
+      const updatedStates = letterStates.map((letterState) => ({
+        letter: letterState.letter,
+        status:
+          letterState.letter === wordAsArray[letterStates.indexOf(letterState)],
+      }));
+      setLetterStates(updatedStates);
+    }
+    setSubmitted(true);
+  }
   return (
     <>
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
@@ -73,13 +101,16 @@ function LetterInputs() {
             key={i}
             value={letterState.letter}
             onChange={(event) => updateLetterState(i, event.target.value)}
+            className={
+              submitted ? (letterState.status ? "correct" : "incorrect") : ""
+            }
           />
         ))}
       </div>
-      {counterValue === 10 ? (
+      {/* {counterValue === 10 ? (
         // ==== UPDATE =====
         // I think that this actually won't be a 'button' with a link - we'll need to just immediately route to the results page IF the counter value increments to 10
-        // Not sure what that will mean for code but I think below code will change
+        // Not sure what that will mean for code but I think below code will change. <--- Agreed! Made the change. 
         <Link to="/results">
           <button
             className="submit-word-btn"
@@ -93,22 +124,30 @@ function LetterInputs() {
             Submit
           </button>
         </Link>
-      ) : (
-        // ===== UPDATE END =====
-        <button
-          className="submit-word-btn"
-          onClick={() => {
-            if (isWordCorrect(letterStates)) {
-              // If all the letters are correct send true to update reducer -> goes to the next word
-              dispatch(update(true));
-              dispatch(increment());
-            }
-            // what happens if false? Nothing? Maybe highlight the letters that have status: false
-          }}
-        >
-          Submit
-        </button>
-      )}
+      ) : ( */}
+      {/* // ===== UPDATE END ===== */}
+      <button
+        className="submit-word-btn"
+        onClick={handleSubmission}
+        //NOTE: Moved the below logic to a handle
+        // onClick={() => {
+        //   if (isWordCorrect(letterStates)) {
+        //     // If all the letters are correct send true to update reducer -> goes to the next word
+        //     dispatch(update(true));
+        //     dispatch(increment());
+        //     setLetterStates(
+        //       letterStates.map((letterState) => ({
+        //         letter: letterState.letter,
+        //         status: false,
+        //       }))
+        //     );
+        //   }
+        //   // what happens if false? Nothing? Maybe highlight the letters that have status: false
+        // }}
+      >
+        Submit
+      </button>
+      {/* )} */}
       <div className="counter">Counter: {counterValue}</div>
     </>
   );
