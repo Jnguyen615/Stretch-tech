@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { update } from "../../reducers/word";
 import { increment } from "../../reducers/Increment";
@@ -22,6 +22,8 @@ function LetterInputs() {
   const [letterStates, setLetterStates] = useState(
     Array(wordLength).fill({ letter: "", status: false })
   );
+
+  const inputRefs = useRef(Array(wordLength).fill(null))
 
   useEffect(() => {
     // Every time the word changes, update the letter state to a new empty letter objects each with their own status of true = "right" or false = "not right"
@@ -48,8 +50,16 @@ function LetterInputs() {
     // if (changeLetterStatus) {
     //   updatedStates[index] = { letter: value, status: true };
     // }
-    setLetterStates(updatedStates);
+    setLetterStates(updatedStates)
+
+    if (index < wordLength -1 && value !== "") {
+      inputRefs.current[index + 1]?.focus()
+    }
   };
+
+  useEffect(() => {
+    inputRefs.current = Array(wordLength).fill(null)
+  }, [wordLength])
 
   const isLetterCorrect = (wordLetters, index, letterStateToCheck) => {
     if (wordLetters[index] === letterStateToCheck[index].letter) {
@@ -101,6 +111,7 @@ function LetterInputs() {
               maxLength={1}
               key={i}
               value={letterState.letter}
+              ref={element => inputRefs.current[i] = element}
               onChange={(event) => updateLetterState(i, event.target.value)}
               className={
                 submitted ? (letterState.status ? "correct" : "incorrect") : ""
