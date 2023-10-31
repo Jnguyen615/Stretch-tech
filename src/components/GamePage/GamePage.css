@@ -1,4 +1,42 @@
-.character-gamePage {
-  height: 8rem;
-  width: 8rem;
+.game-page-container {
+  background-color: var(--light-teal);
+  display:flex;
+  flex-direction: column;
+  color: var(--dark-blue);
+  justify-content: space-between;
+}
+.game-page-upper{
+  padding-left: 4rem;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.game-page-counter {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.game-page-title {
+  font-size: 3rem;
+  margin-left: 30.5vw;
+}
+.test {
+  color: var(--gray);
+}
+
+.game-page-lower{
+  padding-left: 4rem;
+  padding-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ocean-floor{
+  height: 5%;
+  background-color: var(--yellow);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 1.2rem;
 }
