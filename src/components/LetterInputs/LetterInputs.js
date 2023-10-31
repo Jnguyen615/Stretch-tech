@@ -152,7 +152,7 @@ function LetterInputs() {
       {/* )} */}
       <div className="feedback-container">
         {/* we will need to add logic here to display a descriptive message if right or wrong */}
-        <h2>Oops you're one letter off!</h2>
+        <h2 className="feedback-message">Oops you're one letter off!</h2>
       </div>
     </div>
   );

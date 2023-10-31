@@ -18,7 +18,7 @@
 }
 .game-page-title {
   font-size: 3rem;
-  margin-left: 30.5vw;
+  margin-left: 37%;
 }
 .test {
   color: var(--gray);
@@ -39,4 +39,10 @@
   justify-content: center;
   color: black;
   font-size: 1.2rem;
+}
+.seal-body{
+  height: 20%;
+  width: 10%;
+  /* this flips the image horizontally: */
+  transform: scaleX(-1) rotate(30deg);
 }

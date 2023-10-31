@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import LetterInputs from "../LetterInputs/LetterInputs";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import "./GamePage.css";
+import sealBody from '../../images/Seal-body.png'
 
 function GamePage() {
   const word = useSelector((state) => state.word.value);
@@ -23,7 +24,7 @@ function GamePage() {
       {/* this can be deleted in the future */}
       <LetterInputs />
       </div>
-
+      <img className='seal-body' src={sealBody}></img>
       <div className='ocean-floor'>Word to test: {word.word}</div>
       {/* <div
         style={{
