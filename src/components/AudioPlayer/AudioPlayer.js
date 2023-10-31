@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import './AudioPlayer.css'
 
 const AudioPlayer = () => {
   const word = useSelector((state) => state.word.value);

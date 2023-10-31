@@ -1,10 +1,16 @@
+.letter-inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14vw;
+}
 .boxes-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
-  margin: 2rem;
+  margin-bottom: 2rem;
 }
 
 input {
@@ -12,19 +18,23 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 4rem;
-  width: 4rem;
-  font-size: 3rem;
+  height: 7rem;
+  width: 7rem;
+  font-size: 4.5rem;
   padding: 0.5rem;
   border-radius: 10%;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--light-teal);
 }
 
 .submit-word-btn {
   border-radius: 10%;
-  height: 5rem;
-  width: 8rem;
-  font-size: 1.5rem;
+  height: 7rem;
+  width: 11rem;
+  font-size: 2.5rem;
   padding: 0.5rem;
+  font-family: 'Fredoka', 'sans-serif';
+  background-color: var(--moss-green);
 }
 .counter {
   font-size: 1.5rem;
@@ -35,5 +45,5 @@ input {
 }
 
 .incorrect {
-  border: 4px solid red;
+  border: 4px solid var(--red);
 }

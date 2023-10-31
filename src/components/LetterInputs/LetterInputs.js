@@ -91,7 +91,8 @@ function LetterInputs() {
     setSubmitted(true);
   }
   return (
-    <>
+    <div className="letter-inputs-container">
+    <div className="boxes-container">
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         {letterStates.map((letterState, i) => (
           // changed to a map to make this clearer for all us beginners
@@ -147,9 +148,13 @@ function LetterInputs() {
       >
         Submit
       </button>
+      </div>
       {/* )} */}
-      <div className="counter">Counter: {counterValue}</div>
-    </>
+      <div className="feedback-container">
+        {/* we will need to add logic here to display a descriptive message if right or wrong */}
+        <h2>Oops you're one letter off!</h2>
+      </div>
+    </div>
   );
 }
 
