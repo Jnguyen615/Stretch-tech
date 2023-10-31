@@ -34,7 +34,7 @@ input {
   width: 11rem;
   font-size: 2.5rem;
   padding: 0.5rem;
-  font-family: 'Fredoka', 'sans-serif';
+  font-family: "Fredoka", "sans-serif";
   background-color: var(--moss-green);
 }
 .counter {
@@ -52,5 +52,5 @@ input {
 .feedback-message {
   font-size: 2rem;
   font-weight: 400;
-  color:var(--dark-blue);
+  color: var(--black);
 }

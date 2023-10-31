@@ -8,7 +8,10 @@
   --dark-blue: #546FF9;
   --dark-green: #599641;
   --yellow: #FDDE58;
+  --orange: #FF9600;
   --red: #FF4B4B;
+  --black: #000000;
+  
 }
 
 * {
@@ -24,7 +27,6 @@ main {
 }
 .start-page-container {
   padding: 2rem;
-  border: 4px solid green;
   height: 100%;
   width: 100%;
 }
