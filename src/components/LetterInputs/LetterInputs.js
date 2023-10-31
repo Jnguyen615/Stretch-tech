@@ -11,6 +11,7 @@ function LetterInputs() {
   const dispatch = useDispatch();
   // included this piece of state for stying purposes. See the input for the styling conditional.
   const [submitted, setSubmitted] = useState(false);
+  const [incorrectCount, setIncorrectCount] = useState(0);
 
   // GSM
   const word = useSelector((state) => state.word.value);
@@ -72,14 +73,20 @@ function LetterInputs() {
     if (isCorrect) {
       // If all the letters are correct, send true to update reducer -> go to the next word
       dispatch(update(true));
-      dispatch(increment());
+      dispatch(increment()); // this updates the count
       setSubmitted(false);
-
+      setIncorrectCount(0);
       if (counterValue === 9) {
         // 9 because if the user already has 9 points, and the user clicks submit, and they are correct, they will be navigated to the results page.
         navigate("/results");
       }
     } else {
+      setIncorrectCount(0);
+      letterStates.forEach((letterState, index) => {
+        if (letterState.letter !== wordAsArray[index]) {
+          setIncorrectCount((prevIncorrectCount) => prevIncorrectCount + 1);
+        }
+      });
       // If the word is incorrect, update styling and don't proceed to the next word
       const updatedStates = letterStates.map((letterState) => ({
         letter: letterState.letter,
@@ -152,10 +159,17 @@ function LetterInputs() {
       {/* )} */}
       <div className='feedback-container'>
         {/* we will need to add logic here to display a descriptive message if right or wrong */}
-        <h2 className='feedback-message'>Oops! You're one letter off!</h2>
+      {incorrectCount ? (
+        <h2 className='feedback-message'>You've got this! You're {incorrectCount} letter off!</h2>
+      ) : (
+        <h2 className='feedback-message'></h2>
+      )
+      }
       </div>
     </div>
   );
 }
 
 export default LetterInputs;
+
+// research conditional rendering for 5 seconds (display confetti animation)
