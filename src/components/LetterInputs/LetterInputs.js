@@ -91,24 +91,24 @@ function LetterInputs() {
     setSubmitted(true);
   }
   return (
-    <div className="letter-inputs-container">
-    <div className="boxes-container">
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-        {letterStates.map((letterState, i) => (
-          // changed to a map to make this clearer for all us beginners
-          <input
-            // maybe we'll have some inline styling happening in here for the boxes
-            maxLength={1}
-            key={i}
-            value={letterState.letter}
-            onChange={(event) => updateLetterState(i, event.target.value)}
-            className={
-              submitted ? (letterState.status ? "correct" : "incorrect") : ""
-            }
-          />
-        ))}
-      </div>
-      {/* {counterValue === 10 ? (
+    <div className='letter-inputs-container'>
+      <div className='boxes-container'>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          {letterStates.map((letterState, i) => (
+            // changed to a map to make this clearer for all us beginners
+            <input
+              // maybe we'll have some inline styling happening in here for the boxes
+              maxLength={1}
+              key={i}
+              value={letterState.letter}
+              onChange={(event) => updateLetterState(i, event.target.value)}
+              className={
+                submitted ? (letterState.status ? "correct" : "incorrect") : ""
+              }
+            />
+          ))}
+        </div>
+        {/* {counterValue === 10 ? (
         // ==== UPDATE =====
         // I think that this actually won't be a 'button' with a link - we'll need to just immediately route to the results page IF the counter value increments to 10
         // Not sure what that will mean for code but I think below code will change. <--- Agreed! Made the change. 
@@ -126,33 +126,33 @@ function LetterInputs() {
           </button>
         </Link>
       ) : ( */}
-      {/* // ===== UPDATE END ===== */}
-      <button
-        className="submit-word-btn"
-        onClick={handleSubmission}
-        //NOTE: Moved the below logic to a handle
-        // onClick={() => {
-        //   if (isWordCorrect(letterStates)) {
-        //     // If all the letters are correct send true to update reducer -> goes to the next word
-        //     dispatch(update(true));
-        //     dispatch(increment());
-        //     setLetterStates(
-        //       letterStates.map((letterState) => ({
-        //         letter: letterState.letter,
-        //         status: false,
-        //       }))
-        //     );
-        //   }
-        //   // what happens if false? Nothing? Maybe highlight the letters that have status: false
-        // }}
-      >
-        Submit
-      </button>
+        {/* // ===== UPDATE END ===== */}
+        <button
+          className='submit-word-btn'
+          onClick={handleSubmission}
+          //NOTE: Moved the below logic to a handle
+          // onClick={() => {
+          //   if (isWordCorrect(letterStates)) {
+          //     // If all the letters are correct send true to update reducer -> goes to the next word
+          //     dispatch(update(true));
+          //     dispatch(increment());
+          //     setLetterStates(
+          //       letterStates.map((letterState) => ({
+          //         letter: letterState.letter,
+          //         status: false,
+          //       }))
+          //     );
+          //   }
+          //   // what happens if false? Nothing? Maybe highlight the letters that have status: false
+          // }}
+        >
+          submit
+        </button>
       </div>
       {/* )} */}
-      <div className="feedback-container">
+      <div className='feedback-container'>
         {/* we will need to add logic here to display a descriptive message if right or wrong */}
-        <h2>Oops you're one letter off!</h2>
+        <h2 className='feedback-message'>Oops! You're one letter off!</h2>
       </div>
     </div>
   );

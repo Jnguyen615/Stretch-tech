@@ -1,15 +1,16 @@
 .game-page-container {
   background-color: var(--light-teal);
-  display:flex;
+  display: flex;
   flex-direction: column;
   color: var(--dark-blue);
   justify-content: space-between;
 }
-.game-page-upper{
+.game-page-upper {
   padding-left: 4rem;
-  display:flex;
+  padding-right: 4em;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: baseline;
 }
 .game-page-counter {
@@ -18,25 +19,87 @@
 }
 .game-page-title {
   font-size: 3rem;
-  margin-left: 30.5vw;
 }
 .test {
   color: var(--gray);
 }
+.invisible {
+  color: var(--light-teal);
+}
 
-.game-page-lower{
+.game-page-lower {
   padding-left: 4rem;
   padding-right: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.ocean-floor{
-  height: 5%;
+.ocean-floor {
+  height: 5vh;
   background-color: var(--yellow);
   width: 100%;
   display: flex;
   justify-content: center;
   color: black;
   font-size: 1.2rem;
+}
+.seal-body {
+  height: 18%;
+  width: auto;
+  position: absolute;
+  top: 74.2vh;
+  left: 9vw;
+  /* this flips the image horizontally: */
+  transform: scaleX(-1) rotate(13deg);
+  z-index: 0;
+}
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fish {
+  height: 4.2%;
+  z-index: 1;
+  position: absolute;
+  top: 87vh;
+}
+#fish1 {
+  left: 7vw;
+}
+#fish2 {
+  left: 16vw;
+}
+#fish3 {
+  left: 25vw;
+}
+#fish4 {
+  left: 34vw;
+}
+
+#fish5 {
+  left: 44vw;
+}
+#fish6 {
+  left: 54vw;
+}
+#fish7 {
+  left: 64vw;
+}
+#fish8 {
+  left: 74vw;
+}
+#fish9 {
+  left: 84vw;
+}
+#fish10 {
+  left: 94vw;
+}
+
+.progress-line {
+  width: 85vw;
+  height: 5.5vh;
+  border-top: solid 2px var(--gray);
+  margin-left: 13vw;
+  margin-right: 9vw;
 }
