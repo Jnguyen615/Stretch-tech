@@ -4,21 +4,34 @@ const apiHelper = (wordObject) => {
   // return a 'clean' word object
 };
 
-export const getTricksApiCall = (word) => {
-  return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then(
-    (response) => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      // call the apiHelper function and return the new object
-      // push the new object into the promises array
-      return response.json();
+async function getWordInfo(word) {
+  const root = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
+  try {
+    const response = await fetch(`${root}${word}`);
+    if (!response.ok) {
+      throw new Error(response.status);
     }
-  );
-};
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+  // call the apiHelper function and return the new object
+  // push the new object into the promises array
+}
 
-// should this be an iterator method OR an empty array and we call an iterator method elsewhere
-const wordsPromise = [];
+export async function getAllWordInfo(words) {
+  // should this be an iterator method OR an empty array and we call an iterator method elsewhere
+  const results = [];
+  for (const word of words) {
+    const data = await getWordInfo(word);
+    if (data) {
+      results.push(data);
+    }
+  }
+  return results;
+}
 
 // EXAMPLE OF PROMISE
 // Promise.all(promises)

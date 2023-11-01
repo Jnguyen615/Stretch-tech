@@ -5,15 +5,30 @@ import StartPage from "../StartPage/StartPage";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import { apiWord } from "../../apiWord";
 import { Routes, Route } from "react-router-dom";
+import { getAllWordInfo } from "../../apiCalls";
+import words from "../Data/wordBank";
+import { useState, useEffect } from "react";
+
+// we want words = [{word: <word here>, audio: <url>}]
 
 function App() {
-  const apiCall = () => {
-  // setup promise.all 
+  const [wordsToUse, setWordsToUse] = useState([]);
   // set state of words to words array
-  
-  };
+  useEffect(
+    () =>
+      async function fetchData() {
+        try {
+          const result = await getAllWordInfo(words);
+          setWordsToUse(result);
+          console.log(wordsToUse);
+        } catch (error) {
+          console.error(error);
+        }
+        fetchData();
+      },
+    []
+  );
 
-  
   return (
     <>
       <Routes>
