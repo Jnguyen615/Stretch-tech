@@ -14,20 +14,19 @@ import { useState, useEffect } from "react";
 function App() {
   const [wordsToUse, setWordsToUse] = useState([]);
   // set state of words to words array
-  useEffect(
-    () =>
-      async function fetchData() {
-        try {
-          const result = await getAllWordInfo(words);
-          setWordsToUse(result);
-          console.log(wordsToUse);
-        } catch (error) {
-          console.error(error);
-        }
-        fetchData();
-      },
-    []
-  );
+  async function fetchData() {
+    try {
+      const result = await getAllWordInfo(words);
+      console.log(result);
+      setWordsToUse(result);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>

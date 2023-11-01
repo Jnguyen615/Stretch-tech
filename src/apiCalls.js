@@ -2,6 +2,12 @@ const apiHelper = (wordObject) => {
   // take in a word object
   // use iterator methods etc... to 'clean it'
   // return a 'clean' word object
+  const keys = ["word", "phonetics"]
+  const cleanWord = wordObject.reduce((acc, cv) => {
+
+
+  }, {})
+
 };
 
 async function getWordInfo(word) {
@@ -30,6 +36,8 @@ export async function getAllWordInfo(words) {
       results.push(data);
     }
   }
+
+  // useDispatch() update global state
   return results;
 }
 
