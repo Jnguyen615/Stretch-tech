@@ -7,15 +7,22 @@ import { apiWord } from "../../apiWord";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const apiCall = () => {
+  // setup promise.all 
+  // set state of words to words array
+  
+  };
+
+  
   return (
-    <main>
+    <>
       <Routes>
         <Route path="/" element={<StartPage />}></Route>
         <Route path="/game" element={<GamePage />}></Route>
         <Route path="/results" element={<ResultPage />}></Route>
         <Route path="*" element={<ErrorComponent />}></Route>
       </Routes>
-    </main>
+    </>
   );
 }
 
