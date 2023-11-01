@@ -5,17 +5,38 @@ import StartPage from "../StartPage/StartPage";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import { apiWord } from "../../apiWord";
 import { Routes, Route } from "react-router-dom";
+import { getAllWordInfo } from "../../apiCalls";
+import words from "../Data/wordBank";
+import { useState, useEffect } from "react";
+
+// we want words = [{word: <word here>, audio: <url>}]
 
 function App() {
+  const [wordsToUse, setWordsToUse] = useState([]);
+  // set state of words to words array
+  async function fetchData() {
+    try {
+      const result = await getAllWordInfo(words);
+      console.log(result);
+      setWordsToUse(result);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <main>
+    <>
       <Routes>
         <Route path="/" element={<StartPage />}></Route>
         <Route path="/game" element={<GamePage />}></Route>
         <Route path="/results" element={<ResultPage />}></Route>
         <Route path="*" element={<ErrorComponent />}></Route>
       </Routes>
-    </main>
+    </>
   );
 }
 
