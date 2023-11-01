@@ -35,6 +35,7 @@ export const wordSlice = createSlice({
         }
       }
     },
+    // reducer to literally update the state
   },
 });
 

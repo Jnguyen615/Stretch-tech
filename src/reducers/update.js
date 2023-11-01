@@ -1,17 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+// import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateValue = {};
+// const initialStateValue = {};
 
-export const wordSlice = createSlice({
-  name: "word",
-  initialState: { value: initialStateValue },
-  reducers: {
-    update: (state, action) => {
-      state.value = action.payload;
-    },
-  },
-});
+// export const wordSlice = createSlice({
+//   name: "word",
+//   initialState: { value: initialStateValue },
+//   reducers: {
+//     update: (state, action) => {
+//       state.value = action.payload;
+//     },
+//   },
+// });
 
-export const { update } = wordSlice.actions;
+// export const { update } = wordSlice.actions;
 
-export default wordSlice.reducer;
+// export default wordSlice.reducer;

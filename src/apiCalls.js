@@ -1,11 +1,11 @@
 const apiHelper = (wordArray) => {
-  if (wordArray.length || wordArray[0].phonetics[0].audio !== "") {
-    return wordArray.map((wordObj) => {
-      return {
-        word: wordObj.word,
-        audio: wordObj.phonetics[0].audio,
-      };
-    });
+  console.log("Array length", wordArray.length);
+  console.log("First Audio File", wordArray[0].phonetics[0].audio);
+  if (wordArray.length >= 0 && wordArray[0].phonetics[0].audio !== "") {
+    return {
+      word: wordArray[0].word,
+      audio: wordArray[0].phonetics[0].audio,
+    };
   }
   return null;
 };
