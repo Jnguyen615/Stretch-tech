@@ -1,13 +1,13 @@
-const apiHelper = (wordObject) => {
-  // take in a word object
-  // use iterator methods etc... to 'clean it'
-  // return a 'clean' word object
-  const keys = ["word", "phonetics"]
-  const cleanWord = wordObject.reduce((acc, cv) => {
-
-
-  }, {})
-
+const apiHelper = (wordArray) => {
+  console.log("Array length", wordArray.length);
+  console.log("First Audio File", wordArray[0].phonetics[0].audio);
+  if (wordArray.length >= 0 && wordArray[0].phonetics[0].audio !== "") {
+    return {
+      word: wordArray[0].word,
+      audio: wordArray[0].phonetics[0].audio,
+    };
+  }
+  return null;
 };
 
 async function getWordInfo(word) {
@@ -18,7 +18,12 @@ async function getWordInfo(word) {
       throw new Error(response.status);
     }
     const data = await response.json();
-    return data;
+    const cleanedData = apiHelper(data);
+    if (!cleanedData) {
+      return null;
+    }
+    console.log(cleanedData);
+    return cleanedData;
   } catch (error) {
     console.log(error);
     return null;
@@ -28,16 +33,20 @@ async function getWordInfo(word) {
 }
 
 export async function getAllWordInfo(words) {
-  // should this be an iterator method OR an empty array and we call an iterator method elsewhere
   const results = [];
-  for (const word of words) {
-    const data = await getWordInfo(word);
-    if (data) {
-      results.push(data);
+
+  while (results.length < 10) {
+    for (const word of words) {
+      const data = await getWordInfo(word);
+      if (data) {
+        results.push(data);
+      }
+      if (results.length >= 10) {
+        break; // Exit the loop once results have a length of 10 or more
+      }
     }
   }
-
-  // useDispatch() update global state
+  // useDispatch() to update global state
   return results;
 }
 

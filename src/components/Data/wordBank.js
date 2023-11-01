@@ -9,6 +9,14 @@ const words = [
   "ghost",
   "broom",
   "treat",
+  "cat",
+  "witch",
+  "duck",
+  "tombstone",
+  "hello",
+  "goodbye",
+  "clock",
+  "dog",
 ];
 
 export default words;
