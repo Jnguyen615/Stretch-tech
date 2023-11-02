@@ -13,6 +13,7 @@ function LetterInputs() {
   // included this piece of state for stying purposes. See the input for the styling conditional.
   const [submitted, setSubmitted] = useState(false);
   const [incorrectCount, setIncorrectCount] = useState(0);
+  const [index, setIndex] = useState(0);
 
   // GSM
   const currentIndex = useSelector((state) => state.word.currentIndex);
@@ -60,6 +61,7 @@ function LetterInputs() {
     for (const letter of allLettersStateToCheck) {
       fullWord = fullWord.concat(letter.letter);
     }
+    console.log("CURRENT INDEX", currentIndex);
     console.log("COMPARISON WORD.WORD", word.word);
     console.log("COMPARISON FULL WORD", fullWord);
     console.log("Status of words compared", fullWord === word.word);
