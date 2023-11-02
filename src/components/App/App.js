@@ -8,20 +8,17 @@ import { Routes, Route } from "react-router-dom";
 import { getAllWordInfo } from "../../apiCalls";
 import words from "../Data/wordBank";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getAllWords } from "../../reducers/word";
 
 // we want words = [{word: <word here>, audio: <url>}]
 
 function App() {
-  const dispatch = useDispatch();
   const [wordsToUse, setWordsToUse] = useState([]);
   // set state of words to words array
   async function fetchData() {
     try {
       const result = await getAllWordInfo(words);
       console.log(result);
-      dispatch(getAllWords(result));
+      setWordsToUse(result);
     } catch (error) {
       console.error(error);
     }

@@ -35,13 +35,10 @@ export const wordSlice = createSlice({
         }
       }
     },
-    getAllWords: (state, action) => {
-      state = [...action.payload];
-      console.log("State update", state);
-    },
+    // reducer to literally update the state
   },
 });
 
-export const { update, getAllWords } = wordSlice.actions;
+export const { update } = wordSlice.actions;
 
 export default wordSlice.reducer;
