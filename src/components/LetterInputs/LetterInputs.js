@@ -122,9 +122,13 @@ function LetterInputs() {
         </button>
       </div>
       <div className="feedback-container">
-        {incorrectCount ? (
+        {incorrectCount === 1 ? (
           <h2 className="feedback-message">
             You've got this! You're {incorrectCount} letter off!
+          </h2>
+        ) : incorrectCount > 1 ? (
+          <h2 className="feedback-message">
+            So close! You're {incorrectCount} letters off!
           </h2>
         ) : (
           <h2 className="feedback-message"></h2>
