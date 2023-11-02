@@ -1,15 +1,24 @@
 [
   {
-  "word": "again",
-  "phonetic": "/əˈɡeɪn/",
+  "word": "always",
+  "phonetic": "/ˈɔː(l).weɪz/",
   "phonetics": [
   {
-  "text": "/əˈɡeɪn/",
-  "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/again-uk.mp3",
-  "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9014240",
+  "text": "/ˈɔː(l).weɪz/",
+  "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/always-uk.mp3",
+  "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9014247",
   "license": {
   "name": "BY 3.0 US",
   "url": "https://creativecommons.org/licenses/by/3.0/us"
+  }
+  },
+  {
+  "text": "/ˈɔl.weɪz/",
+  "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/always-us.mp3",
+  "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=563111",
+  "license": {
+  "name": "BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0"
   }
   }
   ],
@@ -18,68 +27,63 @@
   "partOfSpeech": "adverb",
   "definitions": [
   {
-  "definition": "Another time; once more.",
-  "synonyms": [],
-  "antonyms": []
+  "definition": "At all times; throughout all time; since the beginning.",
+  "synonyms": [
+  "all the time",
+  "continually",
+  "every time",
+  "perpetually"
+  ],
+  "antonyms": [
+  "at no time",
+  "never"
+  ],
+  "example": "Airplanes did not always exist as a form of transportation."
   },
   {
-  "definition": "Over and above a factor of one.",
-  "synonyms": [],
-  "antonyms": []
+  "definition": "Constantly during a certain period, or regularly at stated intervals (opposed to sometimes or occasionally).",
+  "synonyms": [
+  "invariably",
+  "uniformly"
+  ],
+  "antonyms": [
+  "manywise",
+  "sundrily",
+  "variously"
+  ],
+  "example": "In this street, the shops always close during lunchtime."
   },
   {
-  "definition": "Used metalinguistically, with the repetition being in the discussion, or in the linguistic or pragmatic context of the discussion, rather than in the subject of discussion.",
-  "synonyms": [],
+  "definition": "In any event.",
+  "synonyms": [
+  "anyhow",
+  "anyway",
+  "at any rate",
+  "regardless"
+  ],
   "antonyms": [],
-  "example": "Great, thanks again!"
-  },
-  {
-  "definition": "Back in the reverse direction, or to an original starting point.",
-  "synonyms": [],
-  "antonyms": [],
-  "example": "Bring us word again."
-  },
-  {
-  "definition": "Back (to a former place or state).",
-  "synonyms": [],
-  "antonyms": [],
-  "example": "The South will rise again."
-  },
-  {
-  "definition": "In return, as a reciprocal action; back.",
-  "synonyms": [],
-  "antonyms": []
-  },
-  {
-  "definition": "In any other place.",
-  "synonyms": [],
-  "antonyms": []
-  },
-  {
-  "definition": "On the other hand.",
-  "synonyms": [],
-  "antonyms": []
-  },
-  {
-  "definition": "Moreover; besides; further.",
-  "synonyms": [],
-  "antonyms": []
+  "example": "I thought I could always go back to work."
   }
   ],
-  "synonyms": [],
-  "antonyms": []
-  },
-  {
-  "partOfSpeech": "preposition",
-  "definitions": [
-  {
-  "definition": "(obsolete or dialectal) Against.",
-  "synonyms": [],
-  "antonyms": []
-  }
+  "synonyms": [
+  "all the time",
+  "continually",
+  "every time",
+  "perpetually",
+  "anyhow",
+  "anyway",
+  "at any rate",
+  "regardless",
+  "invariably",
+  "uniformly"
   ],
-  "synonyms": [],
-  "antonyms": []
+  "antonyms": [
+  "at no time",
+  "never",
+  "manywise",
+  "sundrily",
+  "variously"
+  ]
   }
   ],
   "license": {
@@ -87,7 +91,7 @@
   "url": "https://creativecommons.org/licenses/by-sa/3.0"
   },
   "sourceUrls": [
-  "https://en.wiktionary.org/wiki/again"
+  "https://en.wiktionary.org/wiki/always"
   ]
   }
   ]
