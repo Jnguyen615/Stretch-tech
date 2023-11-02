@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import './AudioPlayer.css'
+import "./AudioPlayer.css";
 
 const AudioPlayer = () => {
-  const word = useSelector((state) => state.word.value);
+  const currentIndex = useSelector((state) => state.word.currentIndex);
+  const word = useSelector((state) => state.word.words[currentIndex]);
   const audioRef = useRef(null);
 
   // Use effect is needed to 'reload' the audio element after the state of word changes

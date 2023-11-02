@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import the api data file
 
-const words = [
-  {
-    word: "hello",
-    audio: "https://api.dictionaryapi.dev/media/pronunciations/en/hello-au.mp3",
-  },
-  {
-    word: "goodbye",
-    audio:
-      "https://api.dictionaryapi.dev/media/pronunciations/en/goodbye-us.mp3",
-  },
-];
+// const words = [
+//   {
+//     word: "hello",
+//     audio: "https://api.dictionaryapi.dev/media/pronunciations/en/hello-au.mp3",
+//   },
+//   {
+//     word: "goodbye",
+//     audio:
+//       "https://api.dictionaryapi.dev/media/pronunciations/en/goodbye-us.mp3",
+//   },
+// ];
 // this will go away
 const initialStateValue = {
   words: [],
@@ -26,16 +26,12 @@ export const wordSlice = createSlice({
     update: (state, action) => {
       const guessedWordStatus = action.payload;
       if (guessedWordStatus) {
-        const currentIndex = words.findIndex(
-          (wordObj) => wordObj.word === state.value.word
+        state.value.currentWordIndex += 1;
+        // come back to this
+        console.log(
+          "RAN UPDATE - current index is",
+          state.value.currentWordIndex
         );
-        if (currentIndex < words.length - 1) {
-          state.value = words[currentIndex + 1];
-          console.log(state.value);
-        } else {
-          // If we're at the end of the array, loop back to the beginning.
-          state.value = words[0];
-        }
       }
     },
     setAllWordInfo: (state, action) => {
