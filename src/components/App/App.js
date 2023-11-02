@@ -15,11 +15,25 @@ import { setAllWordInfo } from "../../reducers/word";
 
 function App() {
   const dispatch = useDispatch();
-  const [wordsToUse, setWordsToUse] = useState([]);
+
+  function selectRandomWords() {
+    const selectedWords = [];
+    while (selectedWords.length < 10) {
+      const randomIndex = Math.floor(Math.random() * words.length);
+      const randomWord = words[randomIndex];
+      if (!selectedWords.includes(randomWord)) {
+        selectedWords.push(randomWord);
+      }
+    }
+    return selectedWords;
+  }
+
   // set state of words to words array
   async function fetchData() {
     try {
-      const result = await getAllWordInfo(words);
+      const selectedWords = selectRandomWords();
+
+      const result = await getAllWordInfo(selectedWords);
       console.log(result);
       dispatch(setAllWordInfo(result));
     } catch (error) {
