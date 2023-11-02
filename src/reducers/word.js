@@ -13,7 +13,10 @@ const words = [
   },
 ];
 // this will go away
-const initialStateValue = words[0];
+const initialStateValue = {
+  words: [],
+  currentWordIndex: 0,
+};
 
 export const wordSlice = createSlice({
   name: "word",
@@ -35,10 +38,14 @@ export const wordSlice = createSlice({
         }
       }
     },
-    // reducer to literally update the state
+    setAllWordInfo: (state, action) => {
+      const wordsArray = action.payload;
+      state.words = wordsArray;
+      state.currentIndex = 0;
+    },
   },
 });
 
-export const { update } = wordSlice.actions;
+export const { update, setAllWordInfo } = wordSlice.actions;
 
 export default wordSlice.reducer;
