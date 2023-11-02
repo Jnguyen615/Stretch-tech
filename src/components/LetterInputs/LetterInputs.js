@@ -14,8 +14,9 @@ function LetterInputs() {
   const [incorrectCount, setIncorrectCount] = useState(0);
 
   // GSM
-  const word = useSelector((state) => state.word.value);
   const counterValue = useSelector((state) => state.increment.value);
+  const word = useSelector((state) => state[counterValue].value);
+  console.log(word);
   const navigate = useNavigate();
   const wordLength = word.word.length;
   const wordAsArray = word.word.split("");

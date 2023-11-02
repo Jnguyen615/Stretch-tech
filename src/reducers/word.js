@@ -13,7 +13,7 @@ const words = [
   },
 ];
 // this will go away
-const initialStateValue = words[0];
+const initialStateValue = [];
 
 export const wordSlice = createSlice({
   name: "word",
