@@ -41,8 +41,9 @@ function LetterInputs() {
 
   // Inputting individual letters
   const updateLetterState = (index, value) => {
+    value.toLowerCase();
     const updatedStates = [...letterStates];
-    updatedStates[index] = { letter: value, status: false };
+    updatedStates[index] = { letter: value.toLowerCase(), status: false };
     setLetterStates(updatedStates);
     if (index < wordLength - 1 && value !== "") {
       inputRefs.current[index + 1]?.focus();
