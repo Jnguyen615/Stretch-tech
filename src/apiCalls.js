@@ -1,5 +1,7 @@
+
 const apiHelper = (wordArray) => {
   console.log("Array length", wordArray.length);
+  console.log("word array", wordArray)
   console.log("First Audio File", wordArray[0].phonetics[0].audio);
   if (wordArray.length >= 0 && wordArray[0].phonetics[0].audio !== "") {
     return {
@@ -39,13 +41,16 @@ export async function getAllWordInfo(words) {
     for (const word of words) {
       const data = await getWordInfo(word);
       if (data) {
+        console.log("results", results)
         results.push(data);
       }
+      
       if (results.length >= 10) {
         break; // Exit the loop once results have a length of 10 or more
       }
     }
   }
+  console.log("results", results)
   // useDispatch() to update global state
   return results;
 }

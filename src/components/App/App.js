@@ -16,26 +16,28 @@ import { setAllWordInfo } from "../../reducers/word";
 function App() {
   const dispatch = useDispatch();
 
-  function selectRandomWords() {
-    const selectedWords = [];
-    while (selectedWords.length < 10) {
-      const randomIndex = Math.floor(Math.random() * words.length);
-      const randomWord = words[randomIndex];
-      if (!selectedWords.includes(randomWord)) {
-        selectedWords.push(randomWord);
-      }
-    }
-    return selectedWords;
-  }
+  // function selectRandomWords() {
+  //   const selectedWords = [];
+  //   while (selectedWords.length < 10) {
+  //     const randomIndex = Math.floor(Math.random() * 44);
+  //     const randomWord = words[randomIndex];
+  //     if (!selectedWords.includes(randomWord)) {
+  //       selectedWords.push(randomWord);
+  //     }
+  //   }
+  //   return selectedWords;
+  // }
 
   // set state of words to words array
   async function fetchData() {
     try {
-      const selectedWords = selectRandomWords();
+      // const selectedWords = selectRandomWords();
 
-      const result = await getAllWordInfo(selectedWords);
+      const result = await getAllWordInfo(words);
       console.log(result);
+// 
       dispatch(setAllWordInfo(result));
+
     } catch (error) {
       console.error(error);
     }
@@ -53,6 +55,7 @@ function App() {
         <Route path="/results" element={<ResultPage />}></Route>
         <Route path="*" element={<ErrorComponent />}></Route>
       </Routes>
+
     </>
   );
 }
