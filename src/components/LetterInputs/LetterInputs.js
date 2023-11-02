@@ -15,7 +15,7 @@ function LetterInputs() {
 
   // GSM
   const counterValue = useSelector((state) => state.increment.value);
-  const word = useSelector((state) => state[counterValue].value);
+  const word = useSelector((state) => state.word.value);
   console.log(word);
   const navigate = useNavigate();
   const wordLength = word.word.length;
@@ -25,7 +25,7 @@ function LetterInputs() {
     Array(wordLength).fill({ letter: "", status: false })
   );
 
-  const inputRefs = useRef(Array(wordLength).fill(null))
+  const inputRefs = useRef(Array(wordLength).fill(null));
 
   useEffect(() => {
     // Every time the word changes, update the letter state to a new empty letter objects each with their own status of true = "right" or false = "not right"
@@ -52,16 +52,16 @@ function LetterInputs() {
     // if (changeLetterStatus) {
     //   updatedStates[index] = { letter: value, status: true };
     // }
-    setLetterStates(updatedStates)
+    setLetterStates(updatedStates);
 
-    if (index < wordLength -1 && value !== "") {
-      inputRefs.current[index + 1]?.focus()
+    if (index < wordLength - 1 && value !== "") {
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
   useEffect(() => {
-    inputRefs.current = Array(wordLength).fill(null)
-  }, [wordLength])
+    inputRefs.current = Array(wordLength).fill(null);
+  }, [wordLength]);
 
   const isLetterCorrect = (wordLetters, index, letterStateToCheck) => {
     if (wordLetters[index] === letterStateToCheck[index].letter) {
@@ -109,8 +109,8 @@ function LetterInputs() {
     setSubmitted(true);
   }
   return (
-    <div className='letter-inputs-container'>
-      <div className='boxes-container'>
+    <div className="letter-inputs-container">
+      <div className="boxes-container">
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           {letterStates.map((letterState, i) => (
             // changed to a map to make this clearer for all us beginners
@@ -119,7 +119,7 @@ function LetterInputs() {
               maxLength={1}
               key={i}
               value={letterState.letter}
-              ref={element => inputRefs.current[i] = element}
+              ref={(element) => (inputRefs.current[i] = element)}
               onChange={(event) => updateLetterState(i, event.target.value)}
               className={
                 submitted ? (letterState.status ? "correct" : "incorrect") : ""
@@ -147,7 +147,7 @@ function LetterInputs() {
       ) : ( */}
         {/* // ===== UPDATE END ===== */}
         <button
-          className='submit-word-btn'
+          className="submit-word-btn"
           onClick={handleSubmission}
           //NOTE: Moved the below logic to a handle
           // onClick={() => {
@@ -169,14 +169,15 @@ function LetterInputs() {
         </button>
       </div>
       {/* )} */}
-      <div className='feedback-container'>
+      <div className="feedback-container">
         {/* we will need to add logic here to display a descriptive message if right or wrong */}
-      {incorrectCount ? (
-        <h2 className='feedback-message'>You've got this! You're {incorrectCount} letter off!</h2>
-      ) : (
-        <h2 className='feedback-message'></h2>
-      )
-      }
+        {incorrectCount ? (
+          <h2 className="feedback-message">
+            You've got this! You're {incorrectCount} letter off!
+          </h2>
+        ) : (
+          <h2 className="feedback-message"></h2>
+        )}
       </div>
     </div>
   );
