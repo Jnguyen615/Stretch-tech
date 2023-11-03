@@ -13,7 +13,6 @@ describe("Test specific URLs with a certain root", () => {
   ];
 
   beforeEach(() => {
-    // Intercept requests to the specific URL pattern
     inputs.forEach((input) => {
       cy.intercept(
         {
@@ -25,18 +24,15 @@ describe("Test specific URLs with a certain root", () => {
     });
   });
 
-  it.skip("should catch URLs with a certain root for multiple inputs", () => {
+  it.skip("Should allow the user to navigate to the first word", () => {
     cy.visit("http://localhost:3000");
-
-    // After all the requests have been stubbed, you can assert against the responses.
-    // Here's an example of how you can do it, assuming you have a fixture for each input.
     inputs.forEach((input) => {
       cy.wait(`@apiRequests${input}`);
     });
     cy.get("button")
       .click()
       .get("h1")
-      .should("contain", "Play Word")
+      .should("contain", "Listen and Spell")
       .get(".boxes-container")
       .find("input")
       .as("child")
@@ -61,8 +57,122 @@ describe("Test specific URLs with a certain root", () => {
   });
 
   // happy path
-
+  it.skip("Should move to the next word if correct along with Speckle!", () => {
+    cy.visit("http://localhost:3000");
+    inputs.forEach((input) => {
+      cy.wait(`@apiRequests${input}`);
+    });
+    cy.get("button")
+      .click()
+      .get("input")
+      .first()
+      .type("h")
+      .next("input")
+      .type("e")
+      .next("input")
+      .type("l")
+      .next("input")
+      .type("l")
+      .next("input")
+      .type("o")
+      .get("button")
+      .click()
+      .get(".boxes-container")
+      .find("input")
+      .as("child")
+      .get("@child")
+      .should("have.length", 7)
+      .get("source")
+      .should(
+        "have.attr",
+        "src",
+        "https://api.dictionaryapi.dev/media/pronunciations/en/goodbye-us.mp3"
+      )
+      .get(".seal-body")
+      .should("be.visible")
+      .should("have.attr", "style")
+      .then((style) => {
+        const leftValue = parseFloat(style.split(":")[1].trim());
+        expect(leftValue).to.equal(9.5);
+      });
+  });
   // sad path
+  it.skip("Should give feedback if the user enters the wrong word", () => {
+    cy.visit("http://localhost:3000");
+    inputs.forEach((input) => {
+      cy.wait(`@apiRequests${input}`);
+    });
+    cy.get("button")
+      .click()
+      .get("input")
+      .first()
+      .type("h")
+      .next("input")
+      .type("e")
+      .next("input")
+      .type("r")
+      .next("input")
+      .type("r")
+      .next("input")
+      .type("o")
+      .get("button")
+      .click()
+      .get(".feedback-message")
+      .should("contain", "So close! You're 2 letters off!");
 
-  // get to result page
+    cy.get("input")
+      .first()
+      .next("input")
+      .next("input")
+      .clear()
+      .type("l")
+      .get("button")
+      .click()
+      .get(".feedback-message")
+      .should("contain", "You've got this! You're 1 letter off!");
+
+    cy.get("input")
+      .first()
+      .next("input")
+      .next("input")
+      .next("input")
+      .clear()
+      .type("l")
+      .get("button")
+      .click()
+      .get(".boxes-container")
+      .find("input")
+      .as("child")
+      .get("@child")
+      .should("have.length", 7);
+  });
+  it("Should move all the way to the results page", () => {
+    cy.visit("http://localhost:3000");
+    inputs.forEach((input) => {
+      cy.wait(`@apiRequests${input}`);
+    });
+    cy.get("button").click();
+    // Array of words to type into input fields
+    const wordsToType = [
+      "hello",
+      "goodbye",
+      "witch",
+      "broom",
+      "always",
+      "again",
+      "duck",
+      "pumpkin",
+      "green",
+      "best",
+    ];
+    // Loop through the words and type them into input fields
+    wordsToType.forEach((word) => {
+      cy.get("input").first().type(word);
+      cy.get("button").click();
+    });
+    cy.url()
+      .should("contain", "http://localhost:3000/results")
+      .get("h1")
+      .should("contain", "Good Job!");
+  });
 });
