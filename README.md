@@ -40,7 +40,7 @@ Quick help Specle catch some fish with your spelling prowess!!! Specle is a nove
 
 ## Context:
 
-This is a group project during Mod 3 at Turing School of Software & Design. We were given approximately 2 weeks to create this project from scratch using the [provided comp](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
+This is a group project during Mod 3 at Turing School of Software & Design. We were given approximately 1 week to create this project from scratch using the [provided comp](https://frontend.turing.edu/projects/module-3/stretch.html).
 
 ## Learning Goals:
 - Learn and implement a completely new technology - Redux
@@ -53,8 +53,6 @@ This is a group project during Mod 3 at Turing School of Software & Design. We w
 ## Challenges:
 - Redux: This was our first time learning about as well as implementing Redux. While our application was relatively small it gave us a good opportunity to experiment and learn about the power that Redux offers to manage global state.
 - React: This was our collective second React Application. We enjoyed continuing to learn about the features, functionality, and requirements for implemntation within this library/framework.
-
-
 
 ## Installation Instructions:
 
