@@ -10,20 +10,18 @@ import "./LetterInputs.css";
 function LetterInputs() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // included this piece of state for stying purposes. See the input for the styling conditional.
   const [submitted, setSubmitted] = useState(false);
   const [incorrectCount, setIncorrectCount] = useState(0);
-  const [index, setIndex] = useState(0);
 
   // GSM
-  const currentIndex = useSelector((state) => state.word.currentIndex);
-  const word = useSelector((state) => state.word.words[currentIndex]);
-  const counterValue = useSelector((state) => state.increment.value);
+  const currentIndex = useSelector(state => state.word.currentIndex);
+  const word = useSelector(state => state.word.words[currentIndex]);
+  const counterValue = useSelector(state => state.increment.value);
   const inputRefs = useRef([]);
   const wordAsArray = word.word.split("");
   var wordLength = word.word.length;
   const [letterStates, setLetterStates] = useState(
-    Array(wordLength).fill({ letter: "", status: false })
+    Array(wordLength).fill({ letter: "", status: false }),
   );
 
   useEffect(() => {
@@ -39,15 +37,12 @@ function LetterInputs() {
   }, [letterStates]);
 
   useEffect(() => {
-    // whenever the wordLength changes, this code ensures that the inputRefs.current array is trimmed to match the current length of the word.
     inputRefs.current = inputRefs.current.slice(0, wordLength);
   }, [wordLength]);
 
   useEffect(() => {
     if (inputRefs.current.length > 0) {
-      // If both of the conditions are true, this part uses the focus() method on the next input field
       inputRefs.current[0]?.focus();
-      // represents the next input field in the array, and ?.focus() is a safe way to try to focus on it in case it exists (indicated by the ? symbol)
     }
   }, [inputRefs.current]);
 
@@ -61,8 +56,7 @@ function LetterInputs() {
     }
   };
 
-  // Function to check if word is right against letters all put together
-  const isWordCorrect = (allLettersStateToCheck) => {
+  const isWordCorrect = allLettersStateToCheck => {
     let fullWord = "";
     for (const letter of allLettersStateToCheck) {
       fullWord = fullWord.concat(letter.letter);
@@ -81,23 +75,21 @@ function LetterInputs() {
     }
 
     if (isCorrect) {
-      // If all the letters are correct, send true to update reducer -> update current index
       dispatch(update(isCorrect));
-      dispatch(increment()); // this updates the count
+      dispatch(increment());
       setSubmitted(false);
       setIncorrectCount(0);
       if (counterValue === 9) {
-        // 9 because if the user already has 9 points, and the user clicks submit, and they are correct, they will be navigated to the results page.
         navigate("/results");
       }
     } else {
       setIncorrectCount(0);
       letterStates.forEach((letterState, index) => {
         if (letterState.letter !== wordAsArray[index]) {
-          setIncorrectCount((prevIncorrectCount) => prevIncorrectCount + 1);
+          setIncorrectCount(prevIncorrectCount => prevIncorrectCount + 1);
         }
       });
-      // If the word is incorrect, update styling and don't proceed to the next word
+
       const updatedStates = letterStates.map((letterState, index) => ({
         letter: letterState.letter,
         status: letterState.letter === wordAsArray[index],
@@ -117,8 +109,8 @@ function LetterInputs() {
               maxLength={1}
               key={i}
               value={letterState.letter}
-              ref={(el) => (inputRefs.current[i] = el)}
-              onChange={(event) => updateLetterState(i, event.target.value)}
+              ref={el => (inputRefs.current[i] = el)}
+              onChange={event => updateLetterState(i, event.target.value)}
               className={
                 submitted ? (letterState.status ? "correct" : "incorrect") : ""
               }
@@ -147,5 +139,3 @@ function LetterInputs() {
 }
 
 export default LetterInputs;
-
-// research conditional rendering for 5 seconds (display confetti animation)

@@ -52,7 +52,8 @@ This is a group project during Mod 3 at Turing School of Software & Design. We w
 
 ## Challenges:
 - Redux: This was our first time learning about as well as implementing Redux. While our application was relatively small it gave us a good opportunity to experiment and learn about the power that Redux offers to manage global state.
-- React: This was our collective second React Application. We enjoyed continuing to learn about the features, functionality, and requirements for implemntation within this library/framework.
+- React: This was our collective second React Application. We enjoyed continuing to learn about the features, functionality, and requirements for implementation within this library/framework.
+
 
 ## Installation Instructions:
 
@@ -62,3 +63,8 @@ This is a group project during Mod 3 at Turing School of Software & Design. We w
 4. Run the command: `npm install`
 5. Run the command: `npm start`
 6. The application will open in your browser
+
+## Ideas for future iterations 
+- Add grade level options for words 
+- Add a page where misspelled words go, or some sort of word bank for later practice
+- Login for teachers and giving them the ability to create thier own list of words 

@@ -42,8 +42,8 @@ input {
 }
 
 .submit-word-btn:hover {
-  background-color: var(--moss-green); /* Adjusted color on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: var(--moss-green);
+  transform: scale(1.05); 
 }
 
 .counter {

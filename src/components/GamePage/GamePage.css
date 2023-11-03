@@ -14,14 +14,14 @@
   justify-content: space-between;
   align-items: baseline;
 }
-.game-page-counter-container{
+.game-page-counter-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 .game-page-fish-counter {
   height: 2rem;
-  margin-right:.5rem;
+  margin-right: 0.5rem;
 }
 .game-page-counter {
   font-size: 2rem;
@@ -61,7 +61,6 @@
   position: absolute;
   top: 74.2vh;
   left: 9vw;
-  /* this flips the image horizontally: */
   transform: scaleX(-1) rotate(13deg);
   z-index: 0;
 }
@@ -114,4 +113,11 @@
   border-top: solid 2px var(--gray);
   margin-left: 13vw;
   margin-right: 9vw;
+}
+
+.loading-message {
+  font-size: 5rem;
+  text-align: center;
+  text-shadow: #c7eee4 3px 5px 0, #73dae3 4px 6px 3px, #faf5f5 8px 11px 10px;
+  color: midnightblue;
 }
