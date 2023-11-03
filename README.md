@@ -1,4 +1,4 @@
-# 🦭 Specke
+# 🦭 Speckle
 
 <div align="center">
   
