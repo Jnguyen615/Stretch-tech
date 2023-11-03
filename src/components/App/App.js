@@ -15,6 +15,7 @@ import { setAllWordInfo } from "../../reducers/word";
 
 function App() {
   const dispatch = useDispatch();
+  const [error, setError] = useState("");
 
   // function selectRandomWords() {
   //   const selectedWords = [];
@@ -32,12 +33,12 @@ function App() {
   async function fetchData() {
     try {
       // const selectedWords = selectRandomWords();
-
       const result = await getAllWordInfo(words);
       console.log(result);
       //
       dispatch(setAllWordInfo(result));
     } catch (error) {
+      setError(error);
       console.error(error);
     }
   }
@@ -49,7 +50,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<StartPage />}></Route>
+        {error ? (
+          <Route path="/" element={<ErrorComponent />}></Route>
+        ) : (
+          <Route path="/" element={<StartPage />}></Route>
+        )}
         <Route path="/game" element={<GamePage />}></Route>
         <Route path="/results" element={<ResultPage />}></Route>
         <Route path="*" element={<ErrorComponent />}></Route>

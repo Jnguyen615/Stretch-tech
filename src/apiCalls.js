@@ -1,4 +1,4 @@
-const apiHelper = wordArray => {
+const apiHelper = (wordArray) => {
   console.log("Array length", wordArray.length);
   console.log("word array", wordArray);
   console.log("First Audio File", wordArray[0].phonetics[0].audio);
@@ -26,8 +26,7 @@ async function getWordInfo(word) {
     console.log(cleanedData);
     return cleanedData;
   } catch (error) {
-    console.log(error);
-    return null;
+    throw error;
   }
   // call the apiHelper function and return the new object
   // push the new object into the promises array
@@ -35,22 +34,32 @@ async function getWordInfo(word) {
 
 export async function getAllWordInfo(words) {
   const results = [];
+  let errorOccured = false;
 
   while (results.length < 10) {
     for (const word of words) {
-      const data = await getWordInfo(word);
-      if (data) {
-        console.log("results", results);
-        results.push(data);
+      try {
+        const data = await getWordInfo(word);
+        if (data) {
+          console.log("results", results);
+          results.push(data);
+        }
+      } catch (error) {
+        errorOccured = true;
+        break;
       }
-
       if (results.length >= 10) {
         break; // Exit the loop once results have a length of 10 or more
       }
     }
+    if (errorOccured === true) {
+      break;
+    }
   }
   console.log("results", results);
-  // useDispatch() to update global state
+  if (errorOccured) {
+    throw new Error("An error occured during data retrieval.");
+  }
   return results;
 }
 
