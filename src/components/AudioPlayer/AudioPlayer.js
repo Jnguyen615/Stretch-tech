@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import "./AudioPlayer.css";
 
 const AudioPlayer = () => {
-  const currentIndex = useSelector((state) => state.word.currentIndex);
-  const word = useSelector((state) => state.word.words[currentIndex]);
+  const currentIndex = useSelector(state => state.word.currentIndex);
+  const word = useSelector(state => state.word.words[currentIndex]);
   const audioRef = useRef(null);
 
   // Use effect is needed to 'reload' the audio element after the state of word changes
