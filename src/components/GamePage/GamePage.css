@@ -4,6 +4,7 @@
   flex-direction: column;
   color: var(--dark-blue);
   justify-content: space-between;
+  height: 100vh;
 }
 .game-page-upper {
   padding-left: 4rem;
@@ -13,12 +14,23 @@
   justify-content: space-between;
   align-items: baseline;
 }
+.game-page-counter-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.game-page-fish-counter {
+  height: 2rem;
+  margin-right:.5rem;
+}
 .game-page-counter {
   font-size: 2rem;
   font-weight: 500;
+  font-family: "Fredoka", "sans-serif";
 }
 .game-page-title {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-family: "Fredoka", "sans-serif";
 }
 .test {
   color: var(--gray);

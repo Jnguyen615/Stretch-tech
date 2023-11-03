@@ -11,7 +11,7 @@ export const wordSlice = createSlice({
   initialState: { value: initialStateValue },
   reducers: {
     // This reducer is named 'increment'
-    increment: (state) => {
+    increment: state => {
       // It's going to modify the state by increasing the 'value' property by 1
       state.value += 1;
     },

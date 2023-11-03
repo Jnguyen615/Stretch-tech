@@ -35,9 +35,8 @@ function App() {
 
       const result = await getAllWordInfo(words);
       console.log(result);
-// 
+      //
       dispatch(setAllWordInfo(result));
-
     } catch (error) {
       console.error(error);
     }
@@ -50,12 +49,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<StartPage />}></Route>
-        <Route path="/game" element={<GamePage />}></Route>
-        <Route path="/results" element={<ResultPage />}></Route>
-        <Route path="*" element={<ErrorComponent />}></Route>
+        <Route path='/' element={<StartPage />}></Route>
+        <Route path='/game' element={<GamePage />}></Route>
+        <Route path='/results' element={<ResultPage />}></Route>
+        <Route path='*' element={<ErrorComponent />}></Route>
       </Routes>
-
     </>
   );
 }
