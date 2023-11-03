@@ -14,6 +14,15 @@
   justify-content: space-between;
   align-items: baseline;
 }
+.game-page-counter-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.game-page-fish-counter {
+  height: 2rem;
+  margin-right:.5rem;
+}
 .game-page-counter {
   font-size: 2rem;
   font-weight: 500;

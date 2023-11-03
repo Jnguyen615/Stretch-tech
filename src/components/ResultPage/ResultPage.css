@@ -16,15 +16,15 @@
 
 .result-message {
   font-family: "Fredoka", "sans-serif";
+  color: midnightblue;
 }
 
 .speckle-the-seal {
   height: 35vh;
-  width: 25vw;
 }
 
 .back-to-home-btn {
-  border-radius: 30%;
+  border-radius: 30px;
   height: 6rem;
   width: 10rem;
   font-size: 2.5rem;
@@ -32,6 +32,7 @@
   font-family: "Fredoka", "sans-serif";
   background-color: #73dae3;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .wrapper div {
