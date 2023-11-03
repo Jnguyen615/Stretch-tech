@@ -107,6 +107,7 @@ function LetterInputs() {
             // changed to a map to make this clearer for all us beginners
             <input
               // maybe we'll have some inline styling happening in here for the boxes
+              id={i}
               maxLength={1}
               key={i}
               value={letterState.letter}
