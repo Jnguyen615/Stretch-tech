@@ -10,7 +10,7 @@
 ##### Testing Technologies:
 <img height="60px" src="https://avatars.githubusercontent.com/u/8908513?s=200&v=4"/>
 
-### [View Deployed App]() <= PUT DEPLOYED LINK HERE
+### [View Deployed App](https://stretch-tech-xi.vercel.app/)
 
 </div>
 
