@@ -125,7 +125,7 @@ function GamePage() {
           <div className="progress-container">
             <div className="progress-line"></div>
           </div>
-          <footer className="ocean-floor">Word to test: {word.word}</footer>
+          <footer className="ocean-floor"></footer>
         </div>
       </div>
     );

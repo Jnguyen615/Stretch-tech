@@ -19,13 +19,12 @@ function LetterInputs() {
   const currentIndex = useSelector(state => state.word.currentIndex);
   const word = useSelector(state => state.word.words[currentIndex]);
   const counterValue = useSelector(state => state.increment.value);
-
-  var wordLength = word.word.length;
+  const inputRefs = useRef([]);
   const wordAsArray = word.word.split("");
+  var wordLength = word.word.length;
   const [letterStates, setLetterStates] = useState(
     Array(wordLength).fill({ letter: "", status: false }),
   );
-  const inputRefs =useRef([])
 
   useEffect(() => {
     setLetterStates(Array(wordLength).fill({ letter: "", status: false }));
@@ -38,18 +37,22 @@ function LetterInputs() {
   useEffect(() => {
     console.log(letterStates);
   }, [letterStates]);
-  
+
   useEffect(() => {
-    inputRefs.current = inputRefs.current.slice(0, wordLength)
-  }, [wordLength])
-   
+    // whenever the wordLength changes, this code ensures that the inputRefs.current array is trimmed to match the current length of the word.
+    inputRefs.current = inputRefs.current.slice(0, wordLength);
+  }, [wordLength]);
+
   useEffect(() => {
     if (inputRefs.current.length > 0) {
+      // If both of the conditions are true, this part uses the focus() method on the next input field
       inputRefs.current[0]?.focus();
+      // represents the next input field in the array, and ?.focus() is a safe way to try to focus on it in case it exists (indicated by the ? symbol)
     }
-  }, []);
+  }, [inputRefs.current]);
+
   const updateLetterState = (index, value) => {
-  const lowerCaseValue = value.toLowerCase(); 
+    const lowerCaseValue = value.toLowerCase();
     const updatedStates = [...letterStates];
     updatedStates[index] = { letter: lowerCaseValue, status: false };
     setLetterStates(updatedStates);
@@ -72,7 +75,7 @@ function LetterInputs() {
   };
 
   function handleSubmission() {
-    const isCorrect = isWordCorrect(letterStates)
+    const isCorrect = isWordCorrect(letterStates);
     if (inputRefs.current.length > 0) {
       inputRefs.current[0].focus();
     }
@@ -106,30 +109,28 @@ function LetterInputs() {
 
   return (
     <div className="letter-inputs-container">
-    <div className="boxes-container">
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-        {letterStates.map((letterState, i) => (
-          <input
-            id={i}
-            maxLength={1}
-            key={i}
-            value={letterState.letter}
-            ref={el => (inputRefs.current[i] = el)}
-            onChange={event => updateLetterState(i, event.target.value)}
-            className={
-              submitted ? (letterState.status ? "correct" : "incorrect") : ""
-            }
-          />
-        ))}
+      <div className="boxes-container">
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          {letterStates.map((letterState, i) => (
+            <input
+              id={i}
+              maxLength={1}
+              key={i}
+              value={letterState.letter}
+              ref={el => (inputRefs.current[i] = el)}
+              onChange={event => updateLetterState(i, event.target.value)}
+              className={
+                submitted ? (letterState.status ? "correct" : "incorrect") : ""
+              }
+            />
+          ))}
+        </div>
+        <button className="submit-word-btn" onClick={handleSubmission}>
+          submit
+        </button>
       </div>
-      <button className="submit-word-btn" onClick={handleSubmission}>
-        submit
-      </button>
+      <div className="feedback-container">{/* Feedback messages */}</div>
     </div>
-    <div className="feedback-container">
-      {/* Feedback messages */}
-    </div>
-  </div>
   );
 }
 
