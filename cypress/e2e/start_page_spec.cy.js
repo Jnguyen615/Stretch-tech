@@ -87,14 +87,33 @@ describe("Get words", () => {
     cy.get("h1")
       .contains("Speckle")
       .get("h2")
-      .contains("Help Speckle Get His Snacks")
+      .contains("Spell your way to the end to help Speckle get his snacks!")
       .get(".happy-seal")
       .should("be.visible")
+      .click()
       .get(".start-btn")
       .should("be.visible")
       .get(".yellow-fish")
       .should("be.visible")
       .get(".blue-fish")
       .should("be.visible");
+  });
+});
+
+describe("Get words - Error Page", () => {
+  beforeEach(() => {
+    cy.intercept(
+      { method: 'GET', url: 'https://api.dictionaryapi.dev/api/v2/entries/en/*' },
+      { statusCode: 404, body: 'Not Found' }
+    );
+  });
+
+  it("should show the error page", () => {
+    it("should show the error page", () => {
+      cy.visit("http://localhost:3000/");
+
+      cy.get("h1").contains("Something went wrong");
+      cy.get("h1").contains("Speckle").should("not.exist");
+    });
   });
 });
