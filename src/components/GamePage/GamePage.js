@@ -21,7 +21,7 @@ function GamePage() {
       <div className="game-page-container">
         <div className="game-page-upper">
           <h3 className="game-page-counter">{counterValue + 1} of 10</h3>
-          <h1 className="game-page-title">Play Word</h1>
+          <h1 className="game-page-title">Listen and Spell</h1>
           <h3 className="game-page-counter invisible">0 of 10</h3>
         </div>
         <div className="game-page-lower">

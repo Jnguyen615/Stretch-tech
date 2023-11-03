@@ -14,7 +14,7 @@ function ResultPage() {
   return (
     <div>
       <div className="result-page-container">
-        <h1>Good Job!</h1>
+        <h1 className="result-message">Good Job!</h1>
         <img className="speckle-the-seal" src={speckle} alt="Speckle"></img>
         <button className="back-to-home-btn" onClick={handleRefreshGoHome}>
           Back To Home
