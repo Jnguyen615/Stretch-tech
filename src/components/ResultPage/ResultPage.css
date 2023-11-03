@@ -33,6 +33,13 @@
   background-color: #73dae3;
   font-size: 30px;
   cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-to-home-btn:hover {
+  background-color: #6bcad1; /* Adjusted color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .wrapper div {
@@ -45,6 +52,7 @@
   left: 10%;
   animation: 4s linear infinite;
 }
+
 div .dot {
   height: 10px;
   width: 10px;

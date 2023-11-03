@@ -36,7 +36,16 @@ input {
   padding: 0.5rem;
   font-family: "Fredoka", "sans-serif";
   background-color: var(--moss-green);
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
 }
+
+.submit-word-btn:hover {
+  background-color: var(--moss-green); /* Adjusted color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
 .counter {
   font-size: 1.5rem;
 }
