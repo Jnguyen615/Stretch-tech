@@ -14,17 +14,22 @@
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 200px;
+  text-align: center;
+  color: var(--dark-blue);
+  text-shadow: #c7eee4 3px 5px 0,
+               #73dae3 4px 6px 3px,
+               #faf5f5 8px 11px 10px;
 }
 
-.seal {
-  height: 400px;
-  position: static;
+.happy-seal {
+  width: 350px
 }
 
 h2 {
-  font-size: 45px;
+  font-size:30px;
 }
+
 
 .start-btn {
   border-radius: 30%;
@@ -36,11 +41,24 @@ h2 {
   background-color: #73dae3;
 }
 .start-page-fish-container {
+  width: 100vw;
   display: flex;
+  justify-content: space-evenly;
 }
+
 .yellow-fish,
 .blue-fish {
-  width: 5em;
+  width: 6em;
   z-index: 1;
   top: 50vh;
+  margin: 0
 }
+
+.blue-fish {
+  margin-left: 50px
+}
+
+
+
+
+

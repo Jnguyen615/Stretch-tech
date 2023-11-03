@@ -4,6 +4,7 @@
   flex-direction: column;
   color: var(--dark-blue);
   justify-content: space-between;
+  height: 100vh;
 }
 .game-page-upper {
   padding-left: 4rem;
@@ -16,9 +17,11 @@
 .game-page-counter {
   font-size: 2rem;
   font-weight: 500;
+  font-family: "Fredoka", "sans-serif";
 }
 .game-page-title {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-family: "Fredoka", "sans-serif";
 }
 .test {
   color: var(--gray);
