@@ -1,4 +1,4 @@
-describe('check that if a 404 error occurs, a useful message is displayed', () => {
+describe("check that if a 404 error occurs, a useful message is displayed", () => {
   const inputs = [
     "hello",
     "goodbye",
@@ -13,7 +13,6 @@ describe('check that if a 404 error occurs, a useful message is displayed', () =
   ];
 
   beforeEach(() => {
-    // Intercept requests to the specific URL pattern
     inputs.forEach((input) => {
       cy.intercept(
         {
@@ -24,21 +23,33 @@ describe('check that if a 404 error occurs, a useful message is displayed', () =
       ).as(`apiRequests${input}`);
     });
   });
-  it('shows a 404 error and allows a user to return to home.', () => {
-    cy.visit('http://localhost:3000/')
-    cy.get('.start-btn').click().wait('@apiRequestsbest')
-    .url().should('eq', "http://localhost:3000/game")
-    cy.visit('http://localhost:3000/nonsense')
-    cy.get('.error-message').contains('Something Went Wrong')
-    cy.url().should('eq', 'http://localhost:3000/nonsense')  
-    cy.get('.return-home-btn').click().wait('@apiRequestsbest')
-    .url().should('eq', "http://localhost:3000/")
-    cy.get('.start-btn').click().wait('@apiRequestsbest')
-    .url().should('eq', "http://localhost:3000/game")
-    cy.visit('http://localhost:3000/game/nonsense')
-    cy.get('.error-message').contains('Something Went Wrong')
-    cy.url().should('eq', 'http://localhost:3000/game/nonsense')  
-    cy.get('.return-home-btn').click().wait('@apiRequestsbest')
-    .url().should('eq', "http://localhost:3000/")
-  })
-})
+  it("shows a 404 error and allows a user to return to home.", () => {
+    cy.visit("http://localhost:3000/");
+    cy.get(".start-btn")
+      .click()
+      .wait("@apiRequestsbest")
+      .url()
+      .should("eq", "http://localhost:3000/game");
+    cy.visit("http://localhost:3000/nonsense");
+    cy.get(".error-message").contains("Something Went Wrong");
+    cy.url().should("eq", "http://localhost:3000/nonsense");
+    cy.get(".return-home-btn")
+      .click()
+      .wait("@apiRequestsbest")
+      .url()
+      .should("eq", "http://localhost:3000/");
+    cy.get(".start-btn")
+      .click()
+      .wait("@apiRequestsbest")
+      .url()
+      .should("eq", "http://localhost:3000/game");
+    cy.visit("http://localhost:3000/game/nonsense");
+    cy.get(".error-message").contains("Something Went Wrong");
+    cy.url().should("eq", "http://localhost:3000/game/nonsense");
+    cy.get(".return-home-btn")
+      .click()
+      .wait("@apiRequestsbest")
+      .url()
+      .should("eq", "http://localhost:3000/");
+  });
+});
