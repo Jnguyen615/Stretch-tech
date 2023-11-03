@@ -21,10 +21,12 @@
 Quick help Specle catch some fish with your spelling prowess!!! Specle is a novel childrens game aimed at supporting spelling proficiency. In this application children will be able to listen to a word and then try spelling it on their own. If they get it right, Specle will catch one fish and be one step closer to a full belly. If they don't quite get it right, they'll be shown what letters were slightly off. 
 
 ## Preview of App:
-
-<img width="1588" alt="Screenshot 2023-11-03 at 1 27 34 PM" src="https://user-images.githubusercontent.com/46095125/280372212-6e8d8fd9-d545-4333-8a93-1e89d7f043ed.png">
+Start Page
 <img width="1584" alt="Screenshot 2023-11-03 at 1 26 26 PM" src="https://user-images.githubusercontent.com/46095125/280372202-8c35ede6-7581-4c44-b36e-7f7227fee1e4.png">
+Game Play
 <img width="1592" alt="Screenshot 2023-11-03 at 1 26 39 PM" src="https://user-images.githubusercontent.com/46095125/280372211-a7e9f45c-f42c-45bd-9438-330a770f9d4b.png">
+End Screen
+<img width="1588" alt="Screenshot 2023-11-03 at 1 27 34 PM" src="https://user-images.githubusercontent.com/46095125/280372212-6e8d8fd9-d545-4333-8a93-1e89d7f043ed.png">
 
 
 ## Contributors:
