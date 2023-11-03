@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './ErrorComponent.css'
 
-function ErrorComponent() {
+function ErrorComponent({errorMsg}) {
+  console.log(errorMsg)
   return (
     <div className="error-page">
       <h1 className='error-message'>Something Went Wrong</h1>
