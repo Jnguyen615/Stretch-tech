@@ -24,7 +24,7 @@ describe("Test specific URLs with a certain root", () => {
     });
   });
 
-  it.skip("Should allow the user to navigate to the first word", () => {
+  it("Should allow the user to navigate to the first word", () => {
     cy.visit("http://localhost:3000");
     inputs.forEach((input) => {
       cy.wait(`@apiRequests${input}`);
@@ -57,7 +57,7 @@ describe("Test specific URLs with a certain root", () => {
   });
 
   // happy path
-  it.skip("Should move to the next word if correct along with Speckle!", () => {
+  it("Should move to the next word if correct along with Speckle!", () => {
     cy.visit("http://localhost:3000");
     inputs.forEach((input) => {
       cy.wait(`@apiRequests${input}`);
@@ -97,7 +97,7 @@ describe("Test specific URLs with a certain root", () => {
       });
   });
   // sad path
-  it.skip("Should give feedback if the user enters the wrong word", () => {
+  it("Should give feedback if the user enters the wrong word", () => {
     cy.visit("http://localhost:3000");
     inputs.forEach((input) => {
       cy.wait(`@apiRequests${input}`);

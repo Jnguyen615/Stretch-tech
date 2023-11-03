@@ -16,14 +16,14 @@ function LetterInputs() {
   const [index, setIndex] = useState(0);
 
   // GSM
-  const currentIndex = useSelector(state => state.word.currentIndex);
-  const word = useSelector(state => state.word.words[currentIndex]);
-  const counterValue = useSelector(state => state.increment.value);
+  const currentIndex = useSelector((state) => state.word.currentIndex);
+  const word = useSelector((state) => state.word.words[currentIndex]);
+  const counterValue = useSelector((state) => state.increment.value);
   const inputRefs = useRef([]);
   const wordAsArray = word.word.split("");
   var wordLength = word.word.length;
   const [letterStates, setLetterStates] = useState(
-    Array(wordLength).fill({ letter: "", status: false }),
+    Array(wordLength).fill({ letter: "", status: false })
   );
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function LetterInputs() {
   };
 
   // Function to check if word is right against letters all put together
-  const isWordCorrect = allLettersStateToCheck => {
+  const isWordCorrect = (allLettersStateToCheck) => {
     let fullWord = "";
     for (const letter of allLettersStateToCheck) {
       fullWord = fullWord.concat(letter.letter);
@@ -94,7 +94,7 @@ function LetterInputs() {
       setIncorrectCount(0);
       letterStates.forEach((letterState, index) => {
         if (letterState.letter !== wordAsArray[index]) {
-          setIncorrectCount(prevIncorrectCount => prevIncorrectCount + 1);
+          setIncorrectCount((prevIncorrectCount) => prevIncorrectCount + 1);
         }
       });
       // If the word is incorrect, update styling and don't proceed to the next word
@@ -117,8 +117,8 @@ function LetterInputs() {
               maxLength={1}
               key={i}
               value={letterState.letter}
-              ref={el => (inputRefs.current[i] = el)}
-              onChange={event => updateLetterState(i, event.target.value)}
+              ref={(el) => (inputRefs.current[i] = el)}
+              onChange={(event) => updateLetterState(i, event.target.value)}
               className={
                 submitted ? (letterState.status ? "correct" : "incorrect") : ""
               }
@@ -129,7 +129,19 @@ function LetterInputs() {
           submit
         </button>
       </div>
-      <div className="feedback-container">{/* Feedback messages */}</div>
+      <div className="feedback-container">
+        {incorrectCount === 1 ? (
+          <h2 className="feedback-message">
+            You've got this! You're {incorrectCount} letter off!
+          </h2>
+        ) : incorrectCount > 1 ? (
+          <h2 className="feedback-message">
+            So close! You're {incorrectCount} letters off!
+          </h2>
+        ) : (
+          <h2 className="feedback-message"></h2>
+        )}
+      </div>
     </div>
   );
 }
