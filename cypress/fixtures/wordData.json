@@ -1,0 +1,42 @@
+[
+  {
+    "word": "trick",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/trick-us.mp3"
+  },
+  {
+    "word": "ghoul",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/ghoul-uk.mp3"
+  },
+  {
+    "word": "leaves",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/leaves-uk.mp3"
+  },
+  {
+    "word": "fall",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/fall-1-au.mp3"
+  },
+  {
+    "word": "pumpkin",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/pumpkin-au.mp3"
+  },
+  {
+    "word": "broom",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/broom-us.mp3"
+  },
+  {
+    "word": "treat",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/treat-us.mp3"
+  },
+  {
+    "word": "cat",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/cat-uk.mp3"
+  },
+  {
+    "word": "witch",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/witch-us.mp3"
+  },
+  {
+    "word": "duck",
+    "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/duck-au.mp3"
+  }
+]
