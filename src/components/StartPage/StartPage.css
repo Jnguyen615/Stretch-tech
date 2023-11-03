@@ -13,7 +13,7 @@
   justify-content: space-evenly;
   height: 100vh;
 }
-.start-page-title{
+.start-page-title {
   color: midnightblue;
 }
 
@@ -21,9 +21,7 @@
 .result-message {
   font-size: 9rem;
   text-align: center;
-  text-shadow: #c7eee4 3px 5px 0,
-               #73dae3 4px 6px 3px,
-               #faf5f5 8px 11px 10px;
+  text-shadow: #c7eee4 3px 5px 0, #73dae3 4px 6px 3px, #faf5f5 8px 11px 10px;
 }
 
 .happy-seal {
@@ -41,9 +39,15 @@ h2 {
   width: 10rem;
   font-size: 2.5rem;
   padding: 0.5rem;
-  font-family: "Fredoka", "sans-serif";
+  font-family: "Fredoka", sans-serif;
   background-color: #73dae3;
-  margin-top: 1rem;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.start-btn:hover {
+  background-color: #6bcad1; /* Adjusted color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 .start-page-fish-container {
   width: 100%;
@@ -56,14 +60,9 @@ h2 {
   width: 6em;
   z-index: 1;
   /* top: 50vh; */
-  margin: 0
+  margin: 0;
 }
 
 .blue-fish {
-  margin-left: 50px
+  margin-left: 50px;
 }
-
-
-
-
-

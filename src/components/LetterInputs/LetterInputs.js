@@ -19,14 +19,13 @@ function LetterInputs() {
   const currentIndex = useSelector(state => state.word.currentIndex);
   const word = useSelector(state => state.word.words[currentIndex]);
   const counterValue = useSelector(state => state.increment.value);
-
-  var wordLength = word.word.length;
+  const inputRefs = useRef([]);
   const wordAsArray = word.word.split("");
+  var wordLength = word.word.length;
   const [letterStates, setLetterStates] = useState(
     Array(wordLength).fill({ letter: "", status: false }),
   );
-  useEffect(() => console.log("CURRENT WORD IS", word), [word]);
-  // Reset letter state when new word renders
+
   useEffect(() => {
     setLetterStates(Array(wordLength).fill({ letter: "", status: false }));
     setSubmitted(false);
@@ -39,22 +38,28 @@ function LetterInputs() {
     console.log(letterStates);
   }, [letterStates]);
 
-  // Inputting individual letters
+  useEffect(() => {
+    // whenever the wordLength changes, this code ensures that the inputRefs.current array is trimmed to match the current length of the word.
+    inputRefs.current = inputRefs.current.slice(0, wordLength);
+  }, [wordLength]);
+
+  useEffect(() => {
+    if (inputRefs.current.length > 0) {
+      // If both of the conditions are true, this part uses the focus() method on the next input field
+      inputRefs.current[0]?.focus();
+      // represents the next input field in the array, and ?.focus() is a safe way to try to focus on it in case it exists (indicated by the ? symbol)
+    }
+  }, [inputRefs.current]);
+
   const updateLetterState = (index, value) => {
-    value.toLowerCase();
+    const lowerCaseValue = value.toLowerCase();
     const updatedStates = [...letterStates];
-    updatedStates[index] = { letter: value.toLowerCase(), status: false };
+    updatedStates[index] = { letter: lowerCaseValue, status: false };
     setLetterStates(updatedStates);
-    if (index < wordLength - 1 && value !== "") {
+    if (index < wordLength - 1 && lowerCaseValue !== "") {
       inputRefs.current[index + 1]?.focus();
     }
   };
-
-  // What is this doing?
-  const inputRefs = useRef(Array(wordLength).fill(null));
-  useEffect(() => {
-    inputRefs.current = Array(wordLength).fill(null);
-  }, [wordLength]);
 
   // Function to check if word is right against letters all put together
   const isWordCorrect = allLettersStateToCheck => {
@@ -71,6 +76,9 @@ function LetterInputs() {
 
   function handleSubmission() {
     const isCorrect = isWordCorrect(letterStates);
+    if (inputRefs.current.length > 0) {
+      inputRefs.current[0].focus();
+    }
 
     if (isCorrect) {
       // If all the letters are correct, send true to update reducer -> update current index
@@ -104,14 +112,12 @@ function LetterInputs() {
       <div className="boxes-container">
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           {letterStates.map((letterState, i) => (
-            // changed to a map to make this clearer for all us beginners
             <input
-              // maybe we'll have some inline styling happening in here for the boxes
               id={i}
               maxLength={1}
               key={i}
               value={letterState.letter}
-              ref={element => (inputRefs.current[i] = element)}
+              ref={el => (inputRefs.current[i] = el)}
               onChange={event => updateLetterState(i, event.target.value)}
               className={
                 submitted ? (letterState.status ? "correct" : "incorrect") : ""
@@ -123,19 +129,7 @@ function LetterInputs() {
           submit
         </button>
       </div>
-      <div className="feedback-container">
-        {incorrectCount === 1 ? (
-          <h2 className="feedback-message">
-            You've got this! You're {incorrectCount} letter off!
-          </h2>
-        ) : incorrectCount > 1 ? (
-          <h2 className="feedback-message">
-            So close! You're {incorrectCount} letters off!
-          </h2>
-        ) : (
-          <h2 className="feedback-message"></h2>
-        )}
-      </div>
+      <div className="feedback-container">{/* Feedback messages */}</div>
     </div>
   );
 }

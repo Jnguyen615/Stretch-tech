@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🦭 Speckle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  
+##### Built With: 
+<img height="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img height="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+<img height="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" />
+     
+##### Testing Technologies:
+<img height="60px" src="https://avatars.githubusercontent.com/u/8908513?s=200&v=4"/>
 
-## Available Scripts
+### [View Deployed App]() <= PUT DEPLOYED LINK HERE
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Abstract:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Quick! Help Speckle catch some fish with your spelling prowess!!! Speckle is a novel childrens game aimed at supporting spelling proficiency. In this application children will be able to listen to a word and then try spelling it on their own. If they get it right, Speckle will catch one fish and be one step closer to a full belly. If they don't quite get it right, they'll be shown what letters were slightly off. 
 
-### `npm test`
+## Preview:
+**Start Page**
+<img width="1584" alt="Screenshot 2023-11-03 at 1 26 26 PM" src="https://user-images.githubusercontent.com/46095125/280372202-8c35ede6-7581-4c44-b36e-7f7227fee1e4.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Game Play**
+<img width="1592" alt="Screenshot 2023-11-03 at 1 26 39 PM" src="https://user-images.githubusercontent.com/46095125/280372211-a7e9f45c-f42c-45bd-9438-330a770f9d4b.png">
 
-### `npm run build`
+**End Screen**
+<img width="1588" alt="Screenshot 2023-11-03 at 1 27 34 PM" src="https://user-images.githubusercontent.com/46095125/280372212-6e8d8fd9-d545-4333-8a93-1e89d7f043ed.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributors:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Jen Ziel](https://github.com/jenziel)
+- [Jen Nguyen](https://github.com/Jnguyen615)
+- [Logan Matheny](https://github.com/loganpaulmatheny)
+- [Nicole Rue](https://github.com/nicolerue)
 
-### `npm run eject`
+## Context:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This is a group project during Mod 3 at Turing School of Software & Design. We were given approximately 1 week to create this project from scratch using the [provided comp](https://frontend.turing.edu/projects/module-3/stretch.html).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Learning Goals:
+- Learn and implement a completely new technology - Redux
+- Gain competency with React fundamentals
+- Test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
+- Learn to deploy an application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Challenges:
+- Redux: This was our first time learning about as well as implementing Redux. While our application was relatively small it gave us a good opportunity to experiment and learn about the power that Redux offers to manage global state.
+- React: This was our collective second React Application. We enjoyed continuing to learn about the features, functionality, and requirements for implemntation within this library/framework.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation Instructions:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork this repository.
+2. Clone it to your local machine using the green `<> CODE` button and pasting that into your terminal with the the command: `git clone <paste here>`
+3. Run the command: `cd Stretch-tech`
+4. Run the command: `npm install`
+5. Run the command: `npm start`
+6. The application will open in your browser
