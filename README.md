@@ -1,4 +1,4 @@
-# 🦭 Specle
+# 🦭 Specke
 
 <div align="center">
   
@@ -18,7 +18,7 @@
 
 ## Abstract:
 
-Quick help Specle catch some fish with your spelling prowess!!! Specle is a novel childrens game aimed at supporting spelling proficiency. In this application children will be able to listen to a word and then try spelling it on their own. If they get it right, Specle will catch one fish and be one step closer to a full belly. If they don't quite get it right, they'll be shown what letters were slightly off. 
+Quick! Help Speckle catch some fish with your spelling prowess!!! Speckle is a novel childrens game aimed at supporting spelling proficiency. In this application children will be able to listen to a word and then try spelling it on their own. If they get it right, Speckle will catch one fish and be one step closer to a full belly. If they don't quite get it right, they'll be shown what letters were slightly off. 
 
 ## Preview:
 **Start Page**
