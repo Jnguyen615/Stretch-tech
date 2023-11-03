@@ -11,37 +11,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  height: 100vh;
+}
+.start-page-title{
+  color: midnightblue;
 }
 
-h1 {
-  font-size: 200px;
+.start-page-title,
+.result-message {
+  font-size: 9rem;
   text-align: center;
-  color: var(--dark-blue);
   text-shadow: #c7eee4 3px 5px 0,
                #73dae3 4px 6px 3px,
                #faf5f5 8px 11px 10px;
 }
 
 .happy-seal {
-  width: 350px
+  width: 24vw;
 }
 
 h2 {
-  font-size: 3em
+  font-size: 3em;
+  font-weight: 400;
 }
 
-
 .start-btn {
-  border-radius: 30%;
+  border-radius: 30px;
   height: 5rem;
   width: 10rem;
   font-size: 2.5rem;
   padding: 0.5rem;
   font-family: "Fredoka", "sans-serif";
   background-color: #73dae3;
+  margin-top: 1rem;
 }
 .start-page-fish-container {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -50,7 +55,7 @@ h2 {
 .blue-fish {
   width: 6em;
   z-index: 1;
-  top: 50vh;
+  /* top: 50vh; */
   margin: 0
 }
 
