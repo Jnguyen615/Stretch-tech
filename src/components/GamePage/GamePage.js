@@ -9,10 +9,10 @@ import fishOutlined2 from "../../images/fish-outline2.png";
 import orangeFish from "../../images/orangeFish.png";
 
 function GamePage() {
-  const words = useSelector((state) => state.word.words);
-  const currentIndex = useSelector((state) => state.word.currentIndex);
+  const words = useSelector(state => state.word.words);
+  const currentIndex = useSelector(state => state.word.currentIndex);
   const word = words[currentIndex];
-  const counterValue = useSelector((state) => state.increment.value);
+  const counterValue = useSelector(state => state.increment.value);
   const sealSpacing = counterValue * 9.5;
   if (!word) {
     return <div>Loading...</div>;

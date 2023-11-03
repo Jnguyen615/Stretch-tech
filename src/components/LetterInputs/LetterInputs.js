@@ -16,14 +16,14 @@ function LetterInputs() {
   const [index, setIndex] = useState(0);
 
   // GSM
-  const currentIndex = useSelector((state) => state.word.currentIndex);
-  const word = useSelector((state) => state.word.words[currentIndex]);
-  const counterValue = useSelector((state) => state.increment.value);
+  const currentIndex = useSelector(state => state.word.currentIndex);
+  const word = useSelector(state => state.word.words[currentIndex]);
+  const counterValue = useSelector(state => state.increment.value);
 
   var wordLength = word.word.length;
   const wordAsArray = word.word.split("");
   const [letterStates, setLetterStates] = useState(
-    Array(wordLength).fill({ letter: "", status: false })
+    Array(wordLength).fill({ letter: "", status: false }),
   );
   useEffect(() => console.log("CURRENT WORD IS", word), [word]);
   // Reset letter state when new word renders
@@ -57,7 +57,7 @@ function LetterInputs() {
   }, [wordLength]);
 
   // Function to check if word is right against letters all put together
-  const isWordCorrect = (allLettersStateToCheck) => {
+  const isWordCorrect = allLettersStateToCheck => {
     let fullWord = "";
     for (const letter of allLettersStateToCheck) {
       fullWord = fullWord.concat(letter.letter);
@@ -86,7 +86,7 @@ function LetterInputs() {
       setIncorrectCount(0);
       letterStates.forEach((letterState, index) => {
         if (letterState.letter !== wordAsArray[index]) {
-          setIncorrectCount((prevIncorrectCount) => prevIncorrectCount + 1);
+          setIncorrectCount(prevIncorrectCount => prevIncorrectCount + 1);
         }
       });
       // If the word is incorrect, update styling and don't proceed to the next word
@@ -111,8 +111,8 @@ function LetterInputs() {
               maxLength={1}
               key={i}
               value={letterState.letter}
-              ref={(element) => (inputRefs.current[i] = element)}
-              onChange={(event) => updateLetterState(i, event.target.value)}
+              ref={element => (inputRefs.current[i] = element)}
+              onChange={event => updateLetterState(i, event.target.value)}
               className={
                 submitted ? (letterState.status ? "correct" : "incorrect") : ""
               }
