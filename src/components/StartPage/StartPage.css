@@ -30,6 +30,7 @@
 
 .start-page-instructions {
   font-size: 3em;
+
   font-weight: 400;
   text-align: center;
 }
@@ -47,8 +48,8 @@
 }
 
 .start-btn:hover {
-  background-color: #6bcad1; /* Adjusted color on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #6bcad1;
+  transform: scale(1.05); 
 }
 .start-page-fish-container {
   width: 100%;

@@ -68,3 +68,5 @@ This is a group project during Mod 3 at Turing School of Software & Design. We w
 - Add grade level options for words 
 - Add a page where misspelled words go, or some sort of word bank for later practice
 - Login for teachers and giving them the ability to create thier own list of words 
+- Functionality for auto focus on the submit button after all letters are entered and using backspace to go back a letter box
+

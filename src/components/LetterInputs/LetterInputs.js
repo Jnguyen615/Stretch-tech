@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
+import "./LetterInputs.css";
 import { update } from "../../reducers/word";
 import { increment } from "../../reducers/Increment";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-import "./LetterInputs.css";
 
 function LetterInputs() {
   const dispatch = useDispatch();
@@ -27,13 +26,9 @@ function LetterInputs() {
   useEffect(() => {
     setLetterStates(Array(wordLength).fill({ letter: "", status: false }));
     setSubmitted(false);
-    console.log("WORD AS ARRAY IS", wordAsArray);
-    console.log("The value of word is set", word);
-    console.log("Current Index in letter inputs is", currentIndex);
   }, [currentIndex]);
 
   useEffect(() => {
-    console.log(letterStates);
   }, [letterStates]);
 
   useEffect(() => {
@@ -61,10 +56,6 @@ function LetterInputs() {
     for (const letter of allLettersStateToCheck) {
       fullWord = fullWord.concat(letter.letter);
     }
-    console.log("CURRENT INDEX", currentIndex);
-    console.log("COMPARISON WORD.WORD", word.word);
-    console.log("COMPARISON FULL WORD", fullWord);
-    console.log("Status of words compared", fullWord === word.word);
     return fullWord === word.word;
   };
 
