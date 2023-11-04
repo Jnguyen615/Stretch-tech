@@ -13,7 +13,6 @@ export const wordSlice = createSlice({
       const guessedWordStatus = action.payload;
       if (guessedWordStatus) {
         state.currentIndex += 1;
-        console.log("RAN UPDATE - current index is", state.currentIndex);
       }
     },
     setAllWordInfo: (state, action) => {

@@ -16,13 +16,16 @@
 
 .error-message {
   font-size: 7em;
+  text-align: center;
   font-family: "Fredoka", "sans-serif";
+  text-shadow: #c7eee4 3px 5px 0, #73dae3 4px 6px 3px, #faf5f5 8px 11px 10px;
+  color: midnightblue;
 }
 
 .return-home-btn {
-  border-radius: 30%;
-  height: 6rem;
-  width: 10rem;
+  border-radius: 27%;
+  height: 4rem;
+  width: 17rem;
   font-size: 2.5rem;
   padding: 0.5rem;
   font-family: "Fredoka", "sans-serif";
