@@ -8,43 +8,42 @@ import orangeFish from "../../images/orangeFish.png";
 import redFish from "../..//images/redFish.png";
 
 function GamePage() {
-  const words = useSelector(state => state.word.words);
-  const currentIndex = useSelector(state => state.word.currentIndex);
+  const words = useSelector((state) => state.word.words);
+  const currentIndex = useSelector((state) => state.word.currentIndex);
   const word = words[currentIndex];
-  const counterValue = useSelector(state => state.increment.value);
+  const counterValue = useSelector((state) => state.increment.value);
   const sealSpacing = counterValue * 9.5;
   const fishArray = [...Array(10)];
 
   if (!word) {
-    return <div className="loading-message">Loading...</div>;
+    return <div className='loading-message'>Loading...</div>;
   } else {
     return (
-      <div className="game-page-container">
-        <div className="game-page-upper">
-          <div className="game-page-counter-container">
+      <div className='game-page-container'>
+        <div className='game-page-upper'>
+          <div className='game-page-counter-container'>
             <img
-              className="game-page-fish-counter"
+              className='game-page-fish-counter'
               src={blueFish2}
-              alt="blue fish"
+              alt='blue fish'
             ></img>
-            <h3 className="game-page-counter"> {counterValue + 1} of 10</h3>
+            <h3 className='game-page-counter'> {counterValue + 1} of 10</h3>
           </div>
-          <h1 className="game-page-title">Listen and Spell</h1>
-          <h3 className="game-page-counter invisible">0 of 10</h3>
         </div>
-        <div className="game-page-lower">
+        <div className='game-page-lower'>
+          <h1 className='game-page-title'>Listen and Spell</h1>
           <AudioPlayer />
           <LetterInputs />
         </div>
-        <div className="seal-movement-container">
+        <div className='seal-movement-container'>
           <img
-            className="seal-body"
+            className='seal-body'
             src={sealBody}
-            alt="flat image of a harbor seal with speckles on their back"
+            alt='flat image of a harbor seal with speckles on their back'
             style={{ left: `${sealSpacing}vw` }}
           ></img>
         </div>
-        <div className="fish-container">
+        <div className='fish-container'>
           {fishArray.map((img, index) => {
             const fishId = index + 1;
             const fishAlt =
@@ -55,17 +54,17 @@ function GamePage() {
                 key={`fish-${fishId}`}
                 src={fishSrc}
                 alt={fishAlt}
-                className="fish"
+                className='fish'
                 id={`fish${fishId}`}
               />
             );
           })}
         </div>
         <div>
-          <div className="progress-container">
-            <div className="progress-line"></div>
+          <div className='progress-container'>
+            <div className='progress-line'></div>
           </div>
-          <footer className="ocean-floor"></footer>
+          <footer className='ocean-floor'></footer>
         </div>
       </div>
     );

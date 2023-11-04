@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: 14vw;
 }
 .boxes-container {
@@ -11,7 +12,12 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  margin-left: 11rem;
+  /* margin-left: 11rem; */
+}
+.letter-boxes-container{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 input {
@@ -34,6 +40,9 @@ input {
   width: 11rem;
   font-size: 2.5rem;
   padding: 0.5rem;
+  display:flex;
+  justify-content: center;
+  align-items:center;
   font-family: "Fredoka", "sans-serif";
   background-color: var(--moss-green);
   cursor: pointer;
@@ -63,4 +72,79 @@ input {
   font-weight: 400;
   color: var(--black);
   font-family: "Fredoka", "sans-serif";
+}
+
+@media screen and (max-width: 1504px) {
+ 
+}
+@media screen and (max-width: 1204px) {
+  input {
+    height: 6rem;
+    width: 6rem;
+    font-size: 4rem;
+   }
+   .submit-word-btn {
+    height: 6rem;
+    width: 10rem;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+   }
+   .letter-inputs-container {
+    /* margin-left: 11rem; */
+  }
+}
+@media screen and (max-width: 1000px) {
+  input {
+    height: 6rem;
+    width: 6rem;
+    font-size: 4rem;
+   }
+   .submit-word-btn {
+    height: 6rem;
+    width: 10rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+   }
+ 
+}
+/* ipad screen size */
+@media screen and (max-width: 821px) {
+ input {
+  height: 4rem;
+  width: 4rem;
+  font-size: 3rem;
+ }
+ .submit-word-btn {
+  height: 4rem;
+  width: 8rem;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+ }
+}
+
+/* mobile devices */
+@media screen and (max-width: 425px) {
+  input {
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+   }
+   .submit-word-btn {
+    height: 3rem;
+    width: 7rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+   }
+   .boxes-container {
+    gap: .5rem;
+    margin-bottom: 2rem;
+    /* margin-left: 11rem; */
+    flex-direction: column;
+  }
+  .letter-boxes-container{
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+  }
 }

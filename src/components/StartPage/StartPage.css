@@ -28,9 +28,10 @@
   width: 15vw;
 }
 
-h2 {
+.start-page-instructions {
   font-size: 3em;
   font-weight: 400;
+  text-align: center;
 }
 
 .start-btn {
@@ -60,10 +61,107 @@ h2 {
 .blue-fish {
   width: 6em;
   z-index: 1;
-  /* top: 50vh; */
   margin: 0;
 }
 
 .blue-fish {
   margin-left: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .result-message {
+    font-size: 7rem;
+  }
+  .back-to-home-btn{
+    font-size: 2rem;
+  }
+}
+/* ipad screen size */
+@media screen and (max-width: 821px) {
+  .result-message {
+    font-size: 6rem;
+  }
+}
+/* larger mobile devices */
+@media screen and (max-width: 721px) {
+  .result-message {
+    font-size: 4.5rem;
+  }
+}
+/* mobile devices */
+@media screen and (max-width: 425px) {
+  
+  .start-page-title {
+    font-size: 5rem;
+  }
+
+  .start-btn {
+    font-size: 2rem;
+    border-radius: 20px;
+    height: 3.5rem;
+    width: 7rem;
+    margin-top: 1rem;
+  }
+  .start-page-instructions {
+    font-size: 1.5em;
+    margin-top: 1rem;
+  }
+
+  .happy-seal {
+    width: 55vw;
+  }
+
+  .yellow-fish,
+  .blue-fish {
+    width: 3.5em
+  }
+
+  .blue-fish {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  .start-page-fish-container {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .start-page-title {
+    font-size: 3.5rem;
+  }
+  .start-page-instructions {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  .start-btn {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 6rem;
+  }
+  .yellow-fish,
+  .blue-fish {
+    width: 3rem;
+    z-index: 1;
+    margin: 0;
+  }
+  .blue-fish {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  .happy-seal {
+    width: 20vw;
+    margin: .5rem;
+  }
+  .start-page-container{
+    padding: 1rem;
+  }
+  .result-message{
+    font-size: 4rem;
+  }
+  .back-to-home-btn {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    width: 12rem;
+    height: 3.5rem;
+  }
 }

@@ -2,4 +2,27 @@ audio {
   width: 25vw;
   margin-bottom: 5vh;
   margin-top: 3vh;
+  margin-right: 11rem;
+}
+@media screen and (max-width: 1504px) {
+ 
+}
+@media screen and (max-width: 1204px) {
+audio{
+  margin-right: 0rem;
+}
+}
+/* ipad screen size */
+@media screen and (max-width: 821px) {
+ 
+}
+
+/* mobile devices */
+@media screen and (max-width: 425px) {
+  audio {
+    width: 60vw;
+    margin-bottom: 5vh;
+    margin-top: 3vh;
+    margin-right: 0rem;
+  }
 }
