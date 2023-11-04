@@ -26,3 +26,12 @@ audio{
     margin-right: 0rem;
   }
 }
+/* mobile devices */
+@media screen and (max-height: 425px) and (orientation: landscape) {
+  audio {
+    width: 35vw;
+    margin-bottom: .5vh;
+    margin-top: 0vh;
+    margin-right: 0rem;
+  }
+}

@@ -89,9 +89,6 @@ input {
     font-size: 2.5rem;
     padding: 0.5rem;
    }
-   .letter-inputs-container {
-    /* margin-left: 11rem; */
-  }
 }
 @media screen and (max-width: 1000px) {
   input {
@@ -123,7 +120,7 @@ input {
 }
 
 /* mobile devices */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 435px) {
   input {
     height: 3rem;
     width: 3rem;
@@ -146,5 +143,38 @@ input {
     display: flex;
     align-items: center;
     gap: .25rem;
+  }
+  .letter-inputs-container {
+    margin-bottom: 4vh;
+  }
+}
+/* mobile devices */
+@media screen and (max-height: 435px) and (orientation:landscape){
+  input {
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+   }
+   .submit-word-btn {
+    height: 3rem;
+    width: 7rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-top: 0rem;
+   }
+   .boxes-container {
+    gap: .5rem;
+    margin-bottom: 2rem;
+    /* margin-left: 11rem; */
+    flex-direction: row;
+    align-items:center;
+  }
+  .letter-boxes-container{
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+  }
+  .letter-inputs-container {
+    margin-bottom: 0vh;
   }
 }
