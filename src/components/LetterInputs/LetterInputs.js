@@ -93,7 +93,7 @@ function LetterInputs() {
   return (
     <div className="letter-inputs-container">
       <div className="boxes-container">
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <div className="letter-boxes-container"  >
           {letterStates.map((letterState, i) => (
             <input
               id={i}

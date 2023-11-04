@@ -2,4 +2,24 @@ audio {
   width: 25vw;
   margin-bottom: 5vh;
   margin-top: 3vh;
+  margin-right: 11rem;
+}
+
+/* mobile devices */
+@media screen and (max-width: 425px) {
+  audio {
+    width: 60vw;
+    margin-bottom: 5vh;
+    margin-top: 3vh;
+    margin-right: 0rem;
+  }
+}
+/* mobile devices */
+@media screen and (max-height: 425px) and (orientation: landscape) {
+  audio {
+    width: 35vw;
+    margin-bottom: .5vh;
+    margin-top: 0vh;
+    margin-right: 0rem;
+  }
 }

@@ -6,18 +6,16 @@
   justify-content: space-between;
   height: 100vh;
 }
+
 .game-page-upper {
+  position: absolute;
   padding-left: 4rem;
-  padding-right: 4em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
 }
 .game-page-counter-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-top: 1.5rem;
 }
 .game-page-fish-counter {
   height: 2rem;
@@ -29,14 +27,10 @@
   font-family: "Fredoka", "sans-serif";
 }
 .game-page-title {
+  margin-right: 11rem;
   font-size: 4rem;
   font-family: "Fredoka", "sans-serif";
-}
-.test {
-  color: var(--gray);
-}
-.invisible {
-  color: var(--light-teal);
+  margin-bottom: 3rem;
 }
 
 .game-page-lower {
@@ -64,6 +58,9 @@
   transform: scaleX(-1) rotate(13deg);
   z-index: 0;
 }
+.seal-movement-container {
+  width: 100%;
+}
 .progress-container {
   display: flex;
   flex-direction: column;
@@ -75,6 +72,7 @@
   position: absolute;
   top: 87vh;
 }
+
 #fish1 {
   left: 7vw;
 }
@@ -120,4 +118,110 @@
   text-align: center;
   text-shadow: #c7eee4 3px 5px 0, #73dae3 4px 6px 3px, #faf5f5 8px 11px 10px;
   color: midnightblue;
+}
+
+@media screen and (max-width: 1204px) {
+  .game-page-title {
+    margin-right: 0rem;
+    margin-top: 4rem;
+  }
+  .game-page-counter-container {
+    padding-top: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .game-page-title {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  .game-page-counter-container {
+    padding-top: 0rem;
+  }
+}
+
+/* ipad screen size */
+@media screen and (max-width: 821px) {
+  .seal-body {
+    height: 10%;
+    top: 80vh;
+  }
+  .fish {
+    height: 2%;
+    z-index: 1;
+    position: absolute;
+    top: 87vh;
+  }
+  .progress-line {
+    height: 6.8vh;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-width: 425px) {
+  .game-page-upper {
+    padding-left: 2.1rem;
+  }
+  .game-page-counter {
+    font-size: 1.5rem;
+  }
+  .game-page-fish-counter {
+    height: 1.5rem;
+    margin-right: 0.25rem;
+  }
+  .game-page-lower {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .game-page-title {
+    margin-right: 0rem;
+    margin-top: 4rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .game-page-container {
+    padding-top: 2.5rem;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-height: 435px) and (orientation: landscape) {
+  .game-page-container {
+    padding-top: 1rem;
+    height: 100vh;
+  }
+  .game-page-upper {
+    padding-left: 2.1rem;
+  }
+  .game-page-counter {
+    font-size: 1.5rem;
+  }
+  .game-page-fish-counter {
+    height: 1.5rem;
+    margin-right: 0.25rem;
+  }
+  .seal-body {
+    height: 19%;
+    top: 75vh;
+  }
+  .fish {
+    height: 6%;
+  }
+  .game-page-title {
+    margin-right: 0rem;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .game-page-lower {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .progress-line {
+    height: 4.5vh;
+  }
 }
