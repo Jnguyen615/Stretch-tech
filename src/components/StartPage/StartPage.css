@@ -30,7 +30,7 @@
 
 h2 {
   font-size: 3em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .start-btn {
@@ -46,8 +46,8 @@ h2 {
 }
 
 .start-btn:hover {
-  background-color: #6bcad1; /* Adjusted color on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #6bcad1;
+  transform: scale(1.05); 
 }
 .start-page-fish-container {
   width: 100%;
