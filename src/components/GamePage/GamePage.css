@@ -7,7 +7,7 @@
   height: 100vh;
 }
 
-.game-page-upper{
+.game-page-upper {
   position: absolute;
   padding-left: 4rem;
 }
@@ -58,7 +58,7 @@
   transform: scaleX(-1) rotate(13deg);
   z-index: 0;
 }
-.seal-movement-container{
+.seal-movement-container {
   width: 100%;
 }
 .progress-container {
@@ -134,33 +134,32 @@
   .game-page-title {
     margin-top: 4rem;
     margin-bottom: 2rem;
-
   }
   .game-page-counter-container {
-  
     padding-top: 0rem;
   }
 }
+
 /* ipad screen size */
 @media screen and (max-width: 821px) {
- .seal-body{
-  height: 10%;
-  top: 80vh;
- }
- .fish {
-  height: 2%;
-  z-index: 1;
-  position: absolute;
-  top: 87vh;
-}
-.progress-line {
-  height: 6.8vh;
-}
+  .seal-body {
+    height: 10%;
+    top: 80vh;
+  }
+  .fish {
+    height: 2%;
+    z-index: 1;
+    position: absolute;
+    top: 87vh;
+  }
+  .progress-line {
+    height: 6.8vh;
+  }
 }
 
 /* mobile devices */
 @media screen and (max-width: 425px) {
-  .game-page-upper{
+  .game-page-upper {
     padding-left: 2.1rem;
   }
   .game-page-counter {
@@ -168,10 +167,10 @@
   }
   .game-page-fish-counter {
     height: 1.5rem;
-    margin-right: .25rem;
+    margin-right: 0.25rem;
   }
-  .game-page-lower{
-    padding-left:1rem;
+  .game-page-lower {
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .game-page-title {
@@ -180,18 +179,18 @@
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
-  .game-page-container{
+  .game-page-container {
     padding-top: 2.5rem;
   }
 }
 
 /* mobile devices */
 @media screen and (max-height: 435px) and (orientation: landscape) {
-  .game-page-container{
+  .game-page-container {
     padding-top: 1rem;
     height: 100vh;
   }
-  .game-page-upper{
+  .game-page-upper {
     padding-left: 2.1rem;
   }
   .game-page-counter {
@@ -199,7 +198,7 @@
   }
   .game-page-fish-counter {
     height: 1.5rem;
-    margin-right: .25rem;
+    margin-right: 0.25rem;
   }
   .seal-body {
     height: 19%;
@@ -212,10 +211,10 @@
     margin-right: 0rem;
     margin-top: 1rem;
     font-size: 2.5rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
-  .game-page-lower{
-    display:flex;
+  .game-page-lower {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 70vh;

@@ -72,7 +72,7 @@
   .result-message {
     font-size: 7rem;
   }
-  .back-to-home-btn{
+  .back-to-home-btn {
     font-size: 2rem;
   }
 }
@@ -90,7 +90,6 @@
 }
 /* mobile devices */
 @media screen and (max-width: 425px) {
-  
   .start-page-title {
     font-size: 5rem;
   }
@@ -113,7 +112,7 @@
 
   .yellow-fish,
   .blue-fish {
-    width: 3.5em
+    width: 3.5em;
   }
 
   .blue-fish {
@@ -130,7 +129,7 @@
   }
   .start-page-instructions {
     font-size: 1.5rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   .start-btn {
     font-size: 1.5rem;
@@ -150,12 +149,12 @@
   }
   .happy-seal {
     width: 20vw;
-    margin: .5rem;
+    margin: 0.5rem;
   }
-  .start-page-container{
+  .start-page-container {
     padding: 1rem;
   }
-  .result-message{
+  .result-message {
     font-size: 4rem;
   }
   .back-to-home-btn {

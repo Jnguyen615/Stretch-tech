@@ -13,17 +13,17 @@ function ResultPage() {
 
   return (
     <div>
-      <div className="result-page-container">
-        <h1 className="result-message">Good Job!</h1>
-        <img className="speckle-the-seal" src={speckle} alt="Speckle"></img>
-        <button className="back-to-home-btn" onClick={handleRefreshGoHome}>
+      <div className='result-page-container'>
+        <h1 className='result-message'>Good Job!</h1>
+        <img className='speckle-the-seal' src={speckle} alt='Speckle'></img>
+        <button className='back-to-home-btn' onClick={handleRefreshGoHome}>
           Back To Home
         </button>
       </div>
-      <div className="wrapper">
+      <div className='wrapper'>
         {[...Array(16)].map((_, index) => (
           <div key={index}>
-            <span className="dot"></span>
+            <span className='dot'></span>
           </div>
         ))}
       </div>
