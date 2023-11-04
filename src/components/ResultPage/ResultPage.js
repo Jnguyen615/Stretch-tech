@@ -16,7 +16,11 @@ function ResultPage() {
       <div className='result-page-container'>
         <h1 className='result-message'>Good Job!</h1>
         <img className='speckle-the-seal' src={speckle} alt='Speckle'></img>
-        <button className='back-to-home-btn' onClick={handleRefreshGoHome}>
+        <button
+          className='back-to-home-btn'
+          onClick={handleRefreshGoHome}
+          style={{ color: "inherit" }}
+        >
           Back To Home
         </button>
       </div>

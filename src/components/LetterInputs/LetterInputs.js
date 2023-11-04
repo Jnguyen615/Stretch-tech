@@ -108,7 +108,7 @@ function LetterInputs() {
             />
           ))}
         </div>
-        <button className="submit-word-btn" onClick={handleSubmission}>
+        <button className="submit-word-btn" onClick={handleSubmission} style={{color: 'black'}}>
           submit
         </button>
       </div>

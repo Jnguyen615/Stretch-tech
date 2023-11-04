@@ -11,7 +11,7 @@ function StartPage() {
         <h1 className="start-page-title">Speckle!</h1>
         <img className="happy-seal" src={happySeal} alt="Happy Seal"></img>
         <h2 className="start-page-instructions">Spell your way to the end to help Speckle get his snacks!</h2>
-        <Link to="/game">
+        <Link to="/game" style={{color: 'inherit'}}>
           <button className="start-btn">Start</button>
         </Link>
         <div className="start-page-fish-container">
