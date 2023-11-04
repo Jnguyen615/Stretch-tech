@@ -15,26 +15,12 @@ function StartPage() {
           <button className="start-btn">Start</button>
         </Link>
 
-        <div className="ocean">
-          <div className="wave"></div>
-          <div className="wave-2"></div>
-          <div className="bubbles">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div className='wrapper'>
+          {[...Array(16)].map((_, index) => (
+            <div key={index}>
+              <span className='dot'></span>
+            </div>
+          ))}
         </div>
       </div>
     </main>
