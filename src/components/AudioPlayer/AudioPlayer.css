@@ -9,8 +9,6 @@ audio {
 @media screen and (max-width: 425px) {
   audio {
     width: 60vw;
-    margin-bottom: 5vh;
-    margin-top: 3vh;
     margin-right: 0rem;
   }
 }

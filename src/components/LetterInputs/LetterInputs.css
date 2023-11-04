@@ -46,6 +46,7 @@ input {
   align-items: center;
   font-family: "Fredoka", "sans-serif";
   background-color: var(--moss-green);
+  color:black;
   cursor: pointer;
   border: none;
   transition: background-color 0.3s, transform 0.2s;
