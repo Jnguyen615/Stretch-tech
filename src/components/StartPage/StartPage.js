@@ -14,12 +14,27 @@ function StartPage() {
         <Link to="/game" style={{color: 'inherit'}}>
           <button className="start-btn">Start</button>
         </Link>
-        <div className="start-page-fish-container">
-          <img className="yellow-fish" src={yellowFish} alt="Yellow Fish"></img>
-          <img className="blue-fish" src={blueFish} alt="Blue Fish"></img>
-          <img className="yellow-fish" src={yellowFish} alt="Yellow Fish"></img>
-          <img className="blue-fish" src={blueFish} alt="Blue Fish"></img>
-          <img className="yellow-fish" src={yellowFish} alt="Yellow Fish"></img>
+
+        <div className="ocean">
+          <div className="wave"></div>
+          <div className="wave-2"></div>
+          <div className="bubbles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </main>
