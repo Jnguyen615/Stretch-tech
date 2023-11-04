@@ -46,7 +46,7 @@ input {
   align-items: center;
   font-family: "Fredoka", "sans-serif";
   background-color: var(--moss-green);
-  color:black;
+  color: black;
   cursor: pointer;
   border: none;
   transition: background-color 0.3s, transform 0.2s;
@@ -90,6 +90,10 @@ input {
     font-size: 2.5rem;
     padding: 0.5rem;
   }
+
+  .feedback-message {
+    font-size: 1.4rem;
+  }
 }
 @media screen and (max-width: 1000px) {
   input {
@@ -102,6 +106,9 @@ input {
     width: 10rem;
     font-size: 2rem;
     padding: 0.5rem;
+  }
+  .feedback-message {
+    font-size: 1.2rem;
   }
 }
 /* ipad screen size */
