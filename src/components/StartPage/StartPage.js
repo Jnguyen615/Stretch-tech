@@ -14,12 +14,13 @@ function StartPage() {
         <Link to="/game" style={{color: 'inherit'}}>
           <button className="start-btn">Start</button>
         </Link>
-        <div className="start-page-fish-container">
-          <img className="yellow-fish" src={yellowFish} alt="Yellow Fish"></img>
-          <img className="blue-fish" src={blueFish} alt="Blue Fish"></img>
-          <img className="yellow-fish" src={yellowFish} alt="Yellow Fish"></img>
-          <img className="blue-fish" src={blueFish} alt="Blue Fish"></img>
-          <img className="yellow-fish" src={yellowFish} alt="Yellow Fish"></img>
+
+        <div className='wrapper'>
+          {[...Array(16)].map((_, index) => (
+            <div key={index}>
+              <span className='dot'></span>
+            </div>
+          ))}
         </div>
       </div>
     </main>

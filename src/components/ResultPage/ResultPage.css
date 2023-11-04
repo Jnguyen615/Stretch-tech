@@ -1,12 +1,5 @@
 .result-page-container {
-  background-image: radial-gradient(
-    circle,
-    #546ff9,
-    #009eff,
-    #00c0f6,
-    #73dae3,
-    #c7eee4
-  );
+  background-image: linear-gradient(0deg, #3ac6f2, #fef9d9);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +23,7 @@
   font-size: 2rem;
   padding: 0.5rem;
   font-family: "Fredoka", "sans-serif";
-  background-color: #73dae3;
+  background-color: #03b8c9;
   color: black;
   cursor: pointer;
   border: none;
