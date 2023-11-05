@@ -124,6 +124,9 @@ input {
     font-size: 2.2rem;
     padding: 0.5rem;
   }
+  .feedback-message {
+    font-size: 1.2rem;
+  }
 }
 
 /* mobile devices */
@@ -152,6 +155,9 @@ input {
   }
   .letter-inputs-container {
     margin-bottom: 4vh;
+  }
+  .feedback-message {
+    font-size: 1rem;
   }
 }
 
@@ -182,5 +188,8 @@ input {
   }
   .letter-inputs-container {
     margin-bottom: 0vh;
+  }
+  .feedback-message {
+    font-size: 1rem;
   }
 }
