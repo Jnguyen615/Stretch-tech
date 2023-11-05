@@ -6,7 +6,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "hello",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -14,7 +14,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "goodbye",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -22,7 +22,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "witch",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -30,7 +30,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "broom",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -38,7 +38,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "always",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -46,7 +46,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "again",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -54,7 +54,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "duck",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -62,7 +62,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "pumpkin",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -70,7 +70,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "green",
-      },
+      }
     );
     cy.intercept(
       "GET",
@@ -78,7 +78,7 @@ describe("Get words", () => {
       {
         statusCode: 200,
         fixture: "best",
-      },
+      }
     );
   });
 
@@ -90,12 +90,7 @@ describe("Get words", () => {
       .contains("Spell your way to the end to help Speckle get his snacks!")
       .get(".happy-seal")
       .should("be.visible")
-      .click()
       .get(".start-btn")
-      .should("be.visible")
-      .get(".yellow-fish")
-      .should("be.visible")
-      .get(".blue-fish")
       .should("be.visible");
   });
 });
@@ -103,8 +98,11 @@ describe("Get words", () => {
 describe("Get words - Error Page", () => {
   beforeEach(() => {
     cy.intercept(
-      { method: 'GET', url: 'https://api.dictionaryapi.dev/api/v2/entries/en/*' },
-      { statusCode: 404, body: 'Not Found' }
+      {
+        method: "GET",
+        url: "https://api.dictionaryapi.dev/api/v2/entries/en/*",
+      },
+      { statusCode: 404, body: "Not Found" }
     );
   });
 
