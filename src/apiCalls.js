@@ -11,6 +11,7 @@ const apiHelper = (wordArray) => {
 async function getWordInfo(word) {
   const root = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
   try {
+    const start = performance.now()
     const response = await fetch(`${root}${word}`);
     if (!response.ok) {
       throw new Error(response.status);
@@ -20,6 +21,9 @@ async function getWordInfo(word) {
     if (!cleanedData) {
       return null;
     }
+    const end = performance.now()
+    console.log(`Time taken for ${word}: ${end - start} milliseconds`); 
+    
     return cleanedData;
   } catch (error) {
     throw error;
@@ -54,3 +58,6 @@ export async function getAllWordInfo(words) {
   }
   return results;
 }
+
+
+

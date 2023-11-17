@@ -41,6 +41,20 @@ function LetterInputs() {
     }
   }, [inputRefs.current]);
 
+  useEffect(() => {
+
+    const allInputsFilled = letterStates.every(
+      letterState => letterState.letter !== ''
+    );
+
+    if (allInputsFilled) {
+      const submitButton = document.querySelector('.submit-word-btn');
+      if (submitButton) {
+        submitButton.focus();
+      }
+    }
+  }, [letterStates]);
+
   const updateLetterState = (index, value) => {
     const lowerCaseValue = value.toLowerCase();
     const updatedStates = [...letterStates];
@@ -108,7 +122,7 @@ function LetterInputs() {
             />
           ))}
         </div>
-        <button className="submit-word-btn" onClick={handleSubmission} style={{color: 'black'}}>
+        <button className="submit-word-btn" onClick={handleSubmission} style={{color: 'black'}} autoFocus>
           submit
         </button>
       </div>
